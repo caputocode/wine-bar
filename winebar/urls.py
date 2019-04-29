@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from wines import urls as urls_wines
+from products import urls as urls_wines
+from django.views import static
+from .settings import MEDIA_ROOT
 
 
 urlpatterns = [
