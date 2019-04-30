@@ -3,13 +3,18 @@
 {% load bootstrap_tags %}
 
 {% block content %} 
-<div class="blog_btn">
-            <h1 class="page_title">Blog it</h1>
-            <a class="btn btn-danger btn-sm create-btn" href="{% url 'new_post' %}" role="button">Create Post</a>
-        </div>
+
 
     <article class="container">
         <div class="row margin_row">
+            <div id="blogTitle" class="col-xs-12">
+                <div class="blog_btn">
+                    <h1 class="page_title">Blog it</h1>
+                    <a class="btn btn-danger btn-sm create-btn" href="{% url 'new_post' %}" role="button">Create Post</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             {% for post in posts %}
             <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
                     <div id="posts">

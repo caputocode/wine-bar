@@ -1,5 +1,12 @@
 .margin_row {
     margin-top: 200px;
+    margin-bottom: 60px;
+
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 /*...................................................................NAV */
 
@@ -99,12 +106,15 @@ body #nav {
 
 .create-btn {
     position: relative;
-    bottom: 150px;
 }
 
 .read_more_btn {
     position: relative;
     bottom: 50px;
+}
+
+#blogTitle {
+    width: 100%;
 }
 
 /*post detail */
