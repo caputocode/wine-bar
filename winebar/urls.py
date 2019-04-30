@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from home.views import index
 from products import urls as urls_wines
+from home import urls as urls_home
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -25,4 +26,6 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^wines/', include(urls_wines)),
+    url(r'^home/', include(urls_home)),
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
