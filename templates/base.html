@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Wellness Boxes</title>
+    <title>Wine Bar</title>
 
     <!-- Bootstrap CSS jQuery -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -87,8 +87,8 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="search">
-                <form action="{% url 'search' %}" method="GET">
-                    <input class="search-box" type="text" name="q" placeholder="Search by box name" />
+                <form action="" method="">
+                    <input class="search-box" type="text" name="q" placeholder="Search by wine name" />
                     <button class="search-btn" type="submit">Search</button>
                 </form>
             </div>
@@ -138,17 +138,17 @@
                     <li><i class="fab fa-twitter"></i></li>
                 </ul>
             </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="explore_wrapper">
-                    <h4>Explore</h4>
-                    <ul class="footer_explore">
-                        <li><a href="{% url 'concept' %}">Concept</a></li>
-                        <li><a href="{% url 'boxes' %}">Boxes</a></li>
-                        <li><a href="{% url 'get_posts' %}">Blog</a></li>
-                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
+            <!--<div class="col-xs-12 col-md-4">-->
+            <!--    <div class="explore_wrapper">-->
+            <!--        <h4>Explore</h4>-->
+            <!--        <ul class="footer_explore">-->
+                        <!--<li><a href="">Concept</a></li>-->
+                        <!--<li><a href="">Boxes</a></li>-->
+                        <!--<li><a href="">Blog</a></li>-->
+                        <!--<li><a href="">Contact Us</a></li>-->
+            <!--        </ul>-->
+            <!--    </div>-->
+            <!--</div>-->
         </div>
     </footer>
 

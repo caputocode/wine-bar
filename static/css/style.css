@@ -1,0 +1,181 @@
+/*...................................................................FOOTER */
+
+footer {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #F8F9FA;
+    height: auto;
+    color: #000;
+}
+
+
+
+.footer-text {
+    text-align: center;
+    padding: 26px 10px 0px 10px;
+    font-size: 13px;
+}
+
+.socials {
+    text-align: center;
+    padding: 0;
+    margin-top: 26px;
+}
+
+.socials li {
+    list-style: none;
+    display: inline-block;
+    padding: 12px 15px;
+    margin: 10px;
+    font-size: 20px;
+    color: #000;
+    transition: .5s;
+}
+
+.socials li:hover {
+    color: #2A8E82;
+    transition: .5s;
+    cursor: pointer;
+    transform: scale(2.1);
+}
+
+.footer_explore {
+    list-style: none;
+    padding: 0;
+    font-size: 13px;
+}
+
+.explore_wrapper {
+    margin-top: 26px;
+    text-align: center;
+}
+
+.footer_explore a {
+    color: #000;
+}
+
+.footer_explore a:hover {
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    transition: 0.6s linear;
+}
+
+
+/*sign up form*/
+
+.email_wrapper {
+    background: #fff;
+}
+
+.signup-form {
+    padding: 60px 15px 20px 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.input-field {
+    padding: 6px;
+}
+
+.input-field input {
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+}
+
+
+.form-check {
+    padding: 20px 10px 20px 10px;
+}
+
+.sign_up_btn {
+    margin: 40px 0;
+
+}
+
+.signup-form p {
+    margin-bottom: 30px;
+}
+
+/* .................................................SEARCH MODAL (background) */
+
+#boxModal {
+    display: none;
+    position: fixed;
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Modal content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 40px auto;
+    padding: 45px 25px;
+    text-align: center;
+    border: 1px solid #888;
+    width: 100%;
+    position: relative;
+    top: 260px;
+}
+
+/* Close Button */
+
+.close {
+    color: #2A8E82;
+    padding-bottom: 15px;
+    position: absolute;
+    right: 2%;
+    top: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myBtn {
+    cursor: pointer;
+    padding-right: 20px;
+    transition: .5s;
+}
+
+#myBtn:hover {
+    transform: scale(2.1);
+    transition: .5s;
+    color: #83B0BC;
+}
+
+input {
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #2A8E82;
+}
+
+.search-btn {
+    background-color: #2A8E82;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-left: 6px;
+    cursor: pointer;
+    border-color: transparent;
+    -webkit-transition: background-color 2s;
+    transition: background-color 0.5s;
+}
+
+.search-btn:hover {
+    background-color: #47A798;
+    color: #fff;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+
+}
+
