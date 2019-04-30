@@ -63,6 +63,58 @@ body #nav {
     background-color: #ffffff;
 }
 
+/*...................................................................BLOG PAGE */
+
+
+.blog_btn {
+    position: relative;
+    top: 40px;
+    width: 241px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.blog_title {
+    border-bottom: 1px solid grey;
+    margin-bottom: 50px;
+}
+
+.registration {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.new_post {
+    margin: 130px 0 50px 0;
+}
+
+.post_body p {
+    text-align: center;
+}
+
+#posts {
+    text-align: center;
+}
+
+.create-btn {
+    position: relative;
+    bottom: 150px;
+}
+
+.read_more_btn {
+    position: relative;
+    bottom: 50px;
+}
+
+/*post detail */
+
+#postDetail {
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+
 /*...................................................................FOOTER */
 
 footer {
