@@ -1,7 +1,39 @@
-{% extends 'base.html' %} 
+{% extends "base.html" %}
 {% load staticfiles %}
-{% block content %} 
-<h1 class="page_title">Our Wine</h1>
+{% block content %}
+
+<h1 class="page_title">Wines</h1>
+
+    <div class="container">
+        <div id="winesRow" class="row">
+            {% for wine in wines %}
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img>
+                        <h3 class="card-title">{{ wine.name }}</h3>
+                        <p class="box-description">{{ wine.grape | title }}</p>
+                        <p><strong>€ {{ wine.price }}</strong></p>
+                        <div class="box-detail-btn">
+                            <a href="{% url 'wine_detail' wine.id %}" role="button"><button>Find out more</button></a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark" type="submit">Add to Basket</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
 
 
 {% endblock %}
