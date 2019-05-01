@@ -39,11 +39,14 @@
                     <li class="nav-item active two">
                         <a class="nav-link" href="{% url 'wines' %}">Wines <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active two">
+                        <a class="nav-link" href="{% url 'events' %}">The Space <span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item active four">
                         <a class="nav-link" href="{% url 'get_posts' %}">Blog <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active three">
-                        <a class="nav-link" href="">Contact Us <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <span id="myBtn"><i class="fas fa-search"></i></span>
@@ -146,17 +149,17 @@
                     <li><i class="fab fa-twitter"></i></li>
                 </ul>
             </div>
-            <!--<div class="col-xs-12 col-md-4">-->
-            <!--    <div class="explore_wrapper">-->
-            <!--        <h4>Explore</h4>-->
-            <!--        <ul class="footer_explore">-->
-                        <!--<li><a href="">Concept</a></li>-->
-                        <!--<li><a href="">Boxes</a></li>-->
-                        <!--<li><a href="">Blog</a></li>-->
-                        <!--<li><a href="">Contact Us</a></li>-->
-            <!--        </ul>-->
-            <!--    </div>-->
-            <!--</div>-->
+            <div class="col-xs-12 col-md-4">
+                <div class="explore_wrapper">
+                    <h4>Explore</h4>
+                    <ul class="footer_explore">
+                        <li><a href="">Concept</a></li>
+                        <li><a href="">Wines</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 

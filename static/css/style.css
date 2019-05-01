@@ -105,7 +105,7 @@ p.help-block {
     visibility: hidden;
     position: absolute;
     top: 25%;
-    left: 25%;
+    left: 5%;
     color: #fff;
     opacity: 0;
     transition: opacity .2s, visibility .2s;
@@ -134,6 +134,20 @@ p.help-block {
     width: 327px;
     border-radius: 0 7px 10px 7px;
     background-color: #ffffff;
+}
+
+/*...................................................................EVENTS PAGE */
+
+.event_wrapper {
+       position: relative;
+    bottom: 450px;
+    background: white;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 30px;
 }
 
 /*...................................................................BLOG PAGE */
