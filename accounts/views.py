@@ -8,6 +8,8 @@ from blogposts.models import Post
 from django.contrib.auth.models import User
 
 # Create your views here.
+
+
 def register(request):
     """A view that manages the registration form"""
     if request.method == 'POST':
@@ -67,6 +69,13 @@ def profile(request):
 
     return render(request, 'profile.html', {'user_orders': user_orders, 'user_posts': user_posts})
     
+@login_required
+def retrieve_order(request, pk):
+    """Shows users order details """
+
+    user_order_details = (OrderLineItem.objects.filter(order_id=pk))
+    return render(request, 'orders.html', {
+        'user_order_details': user_order_details, 'order_id': pk})
    
 def logout(request):
     """A view that logs the user out and redirects back to the index page"""

@@ -19,6 +19,72 @@ body #nav {
 .nav-item a .nav-link {
     padding: 40px 25px;
 }
+/*................................................................LOGIN/REGISTER PAGE */
+
+#login {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.login_wrapper {
+     background: #f4f4f4;
+    padding: 40px;
+}
+
+.register_wrapper {
+     background: #f4f4f4;
+     padding: 80px;
+}
+
+.form-group a {
+    color: red;
+}
+
+.login_form {
+    text-align: center;
+}
+
+
+#id_username_or_email,
+#id_password,
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+    background: transparent;
+}
+
+#div_id_username_or_email,
+#div_id_username,
+#div_id_email,
+#div_id_password1,
+#div_id_password2 {
+    margin-top: 50px;
+}
+
+#div_id_password {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#id_password2 {
+    margin-bottom: 50px;
+}
+
+.accountform label {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p.help-block {
+    font-size: 13px;
+    margin: 10px 0 0 0;
+}
 
 
 /*...................................................................INDEX PAGE */
