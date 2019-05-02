@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <form method="POST" action="">
+                        <form method="POST" action="{% url 'add_to_cart' wine.id %}">
                             {% csrf_token %}
                             <div class="input-group">
                                 <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />

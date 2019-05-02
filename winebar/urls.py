@@ -19,6 +19,7 @@ from home.views import index
 from products import urls as urls_wines
 from home import urls as urls_home
 from blogposts import urls as urls_blogposts
+from cart import urls as urls_cart
 from accounts import urls as urls_accounts
 from django.views import static
 from .settings import MEDIA_ROOT
@@ -30,6 +31,7 @@ urlpatterns = [
     url(r'^wines/', include(urls_wines)),
     url(r'^home/', include(urls_home)),
     url(r'^accounts/', include(urls_accounts)),
+    url(r'^cart/', include(urls_cart)),
     url(r'^blog/', include(urls_blogposts)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]

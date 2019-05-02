@@ -67,7 +67,7 @@
                 </span>
                 {% endif %}
                 <span class="navbar-text active">
-                    <a class="nav-link" href="">Basket <i class="fas fa-shopping-cart"></i>
+                    <a class="nav-link" href="{% url 'view_cart' %}">Basket <i class="fas fa-shopping-cart"></i>
                     {% if product_count > 0 %}
                     <label class="badge badge-warning">{{product_count}} </label>
                     {% endif %}
