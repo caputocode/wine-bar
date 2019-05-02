@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row margin_row">
+        <div class="col-xs-12 col-sm-8 offset-sm-2">
+            <div class="card mb-3">
+                <div class="card-body">
+                    {% if wine.image %}
+                    <img class="boxes card-img-top" src="/media/{{ wine.image }}"></img>
+                    {% endif %}
+                    <h3 class="card-title">{{ wine.name }}</h3>
+                    <h5>Description</h5>
+                    <a href="{% url 'wines' %}" class="btn btn-dark btn-sm">Back to wines</a>
+                    <hr>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="submit">Add to Basket</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
