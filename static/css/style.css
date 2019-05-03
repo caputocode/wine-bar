@@ -5,8 +5,13 @@
 }
 
 h1 {
-    text-transform: uppercase;
     letter-spacing: 3px;
+    font-family: 'Qwigley', cursive;
+
+}
+
+h2 {
+    font-family: 'Qwigley', cursive;
 }
 /*...................................................................NAV */
 
@@ -61,14 +66,21 @@ body #nav {
 
 #indexRow {
     position: relative;
-    top: 45%;
+    top: 34%;
 }
 
 .index_buttons {
     width: 100%;
     text-align: center;
+
+}
+
+.logo {
+    
+    width: 300px;
+    margin: 0 auto;
     position: relative;
-    top: 40%;
+    top: 32%;
 }
 
 /*................................................................LOGIN/REGISTER PAGE */
