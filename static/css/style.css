@@ -18,7 +18,7 @@ h2 {
 body #nav {
     font-size: 12px;
     text-transform: uppercase;
-    padding: 60px 25px;
+    padding: 30px 25px;
 }
 
 .nav-item a .nav-link {
@@ -154,6 +154,36 @@ p.help-block {
     margin: 10px 0 0 0;
 }
 
+/*...................................................................SHOP WINES PAGE */
+
+
+    /*Add to Basket Button*/
+    
+    .icon-btn {
+      visibility: hidden;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #B87333;
+      border-radius: 25px;
+      margin: 0 10px;
+      overflow: hidden;
+      position: relative;
+      transition: width 0.2s ease-in-out;
+    }
+    
+    .add-btn:hover {
+        cursor: pointer;
+    }
+    
+    .cart_icon i {
+        font-size: 35px;
+        margin-top: 2px;
+        color: #B87333;
+    }
+    
+    .cart_icon i:hover {
+        cursor: pointer;
+    }
 
 /*...................................................................CONCEPT PAGE */
 
@@ -481,4 +511,97 @@ input {
     footer {
         padding: 100px;
     }
+    
+    /*Add to Basket Button*/
+    
+    .cart_icon i {
+        visibility: hidden;
+        font-size: 0px;
+    }
+    
+    .icon-btn {
+      visibility: visible;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #B87333;
+      border-radius: 25px;
+      margin: 0 10px;
+      overflow: hidden;
+      position: relative;
+      transition: width 0.2s ease-in-out;
+        bottom: 4px;
+    }
+    
+    .add-btn:hover {
+      width: 150px;
+    }
+    
+    .add-btn::before,
+    .add-btn::after {
+      transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 10px;
+      top: calc(50% - 2px);
+      background: #B87333;
+    }
+    .add-btn::after {
+      right: 14px;
+      overflow: hidden;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    .add-btn::before {
+      left: 14px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .icon-btn:focus {
+      outline: none;
+    }
+    .btn-txt {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .add-btn:hover::before,
+    .add-btn:hover::after {
+      width: 4px;
+      border-radius: 2px;
+    }
+    .add-btn:hover .btn-txt {
+      opacity: 1;
+    }
+    .add-icon::after,
+    .add-icon::before {
+      transition: all 0.2s ease-in-out;
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 2px;
+      top: calc(50% - 10px);
+      background: #B87333;
+      overflow: hidden;
+    }
+    .add-icon::before {
+      left: 22px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .add-icon::after {
+      right: 22px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    .add-btn:hover .add-icon::before {
+      left: 15px;
+      height: 4px;
+      top: calc(50% - 2px);
+    }
+    .add-btn:hover .add-icon::after {
+      right: 15px;
+      height: 4px;
+      top: calc(50% - 2px);
+    }  
 }
+

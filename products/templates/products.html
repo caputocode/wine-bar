@@ -16,6 +16,7 @@
                         <div class="box-detail-btn">
                             <a href="{% url 'wine_detail' wine.id %}" role="button"><button>Find out more</button></a>
                         </div>
+                    
                     </div>
                     <div class="card-footer">
                         <form method="POST" action="{% url 'add_to_cart' wine.id %}">
@@ -23,7 +24,11 @@
                             <div class="input-group">
                                 <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
                                 <span class="input-group-btn">
-                                    <button class="btn btn-dark" type="submit">Add to Basket</button>
+                                    <button class="icon-btn add-btn">
+                                        <div class="add-icon"></div>
+                                        <div class="btn-txt">Add to Basket</div>
+                                    </button>
+                                    <span class="cart_icon"><i class="fas fa-cart-plus"></i></span>
                                 </span>
                             </div>
                         </form>
