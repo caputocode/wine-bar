@@ -3,15 +3,12 @@
 
 }
 
-h1 {
+h1, h2, h3 {
     letter-spacing: 3px;
     font-family: 'Montserrat', sans-serif;
 
 }
 
-h2 {
-    font-family: 'Qwigley', cursive;
-}
 
 /*...................................................................NAV */
 
@@ -243,12 +240,13 @@ p.help-block {
 
 .event_wrapper {
     position: relative;
-    background: white;
+    background-color: rgba(251,251,251,.6);
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 20px;
+
 }
 
 
@@ -261,6 +259,7 @@ p.help-block {
 
 .events_title {
     margin-bottom: 40px;
+    color: #B87333;
 }
 
 /*...................................................................BLOG PAGE */
@@ -276,7 +275,6 @@ p.help-block {
 }
 
 .blog_title {
-    border-bottom: 1px solid grey;
     margin-bottom: 50px;
 }
 
@@ -285,7 +283,8 @@ p.help-block {
 }
 
 .new_post {
-    margin: 130px 0 50px 0;
+    margin: 160px 0 50px 0;
+    text-align: center;
 }
 
 .post_body {
@@ -318,6 +317,7 @@ p.help-block {
 
 #blogTitle {
     width: 100%;
+    margin-bottom: 60px;
 }
 
 /*post detail */
@@ -336,6 +336,25 @@ p.help-block {
 
 #posts .blog_imgs:hover {
     transform: scale(1.5);
+}
+
+/*...................................................................CONTACT */
+
+.contact_subheadings {
+    text-align: center;
+}
+
+/*Google map style*/
+
+#map-area {
+  padding: 0;
+  margin: 0;
+}
+
+#map {
+  width: 50%;
+  height: 300px;
+  margin: 0 auto;
 }
 
 /*...................................................................FOOTER */
@@ -563,7 +582,6 @@ input {
         top: 350px;
         right: 25%;
         width: 50%;
-        background: white;
         margin: 0 auto;
         text-align: center;
         text-transform: uppercase;
