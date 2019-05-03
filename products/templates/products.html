@@ -7,7 +7,7 @@
         <div id="winesRow" class="row margin_row">
             {% for wine in wines %}
             <div class="col-xs-12 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card-deck">
                     <div class="card-body">
                         <img class="card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img>
                         <h3 class="card-title">{{ wine.name }}</h3>

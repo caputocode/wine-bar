@@ -19,6 +19,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
     {% block head_js %} {% endblock head_js %}
 </head>
 
@@ -31,7 +33,8 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="{% url 'index' %}">Mistral Wine Bar</a>
+                                <a class="navbar-brand" href="{% url 'index' %}"><img class="img-fluid logo_nav" src="/media/images/logo.png" alt="logo"></a>
+
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active one">
                         <a class="nav-link" href="{% url 'concept' %}">Concept <span class="sr-only">(current)</span></a>
@@ -49,6 +52,7 @@
                         <a class="nav-link" href="{% url 'contact' %}">Contact Us <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
+
                 <span id="myBtn"><i class="fas fa-search"></i></span>
     
                 {% if user.is_authenticated %}
@@ -100,7 +104,7 @@
             <span class="close">&times;</span>
             <div class="search">
                 <form action="{% url 'search' %}" method="GET">
-                    <input class="search-box" type="text" name="q" placeholder="Search by box name" />
+                    <input class="search-box" type="text" name="q" placeholder="Search by Wine or Grape name" />
                     <button class="search-btn" type="submit">Search</button>
                 </form>
             </div>
@@ -145,7 +149,7 @@
             </div>
             <div class="col-xs-12 col-md-4">
                 <ul class="socials">
-                    <h4>Socials</h4>
+                    <h5>Socials</h5>
                     <li><i class="fab fa-facebook-f"></i></li>
                     <li><i class="fab fa-instagram"></i></li>
                     <li><i class="fab fa-twitter"></i></li>
@@ -153,7 +157,7 @@
             </div>
             <div class="col-xs-12 col-md-4">
                 <div class="explore_wrapper">
-                    <h4>Explore</h4>
+                    <h5>Explore</h5>
                     <ul class="footer_explore">
                         <li><a href="">Concept</a></li>
                         <li><a href="">Wines</a></li>
