@@ -7,29 +7,24 @@
         <div id="winesRow" class="row margin_row">
             {% for wine in wines %}
             <div class="col-xs-12 col-md-6 col-lg-4">
-                <div class="card-deck">
+                <a href="{% url 'wine_detail' wine.id %}" role="button">
+                    <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img>
+                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img></a>
                         <h3 class="card-title">{{ wine.name }}</h3>
                         <p class="box-description">{{ wine.grape | title }}</p>
                         <p><strong>£ {{ wine.price }}</strong></p>
-                        <div class="box-detail-btn">
-                            <a href="{% url 'wine_detail' wine.id %}" role="button"><button>Find out more</button></a>
-                        </div>
-                    
-                    </div>
-                    <div class="card-footer">
+
                         <form method="POST" action="{% url 'add_to_cart' wine.id %}">
                             {% csrf_token %}
                             <div class="input-group">
-                                <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
-                                <span class="input-group-btn">
-                                    <button class="icon-btn add-btn">
+                            <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                            <span class="input-group-btn">
+                                <button class="icon-btn add-btn">
                                         <div class="add-icon"></div>
                                         <div class="btn-txt">Add to Basket</div>
-                                    </button>
-                                    <span class="cart_icon"><i class="fas fa-cart-plus"></i></span>
-                                </span>
+                                </button>
+                            </span>
                             </div>
                         </form>
                     </div>
