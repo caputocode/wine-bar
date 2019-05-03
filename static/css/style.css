@@ -5,13 +5,14 @@
 
 h1 {
     letter-spacing: 3px;
-    font-family: 'Qwigley', cursive;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
 h2 {
     font-family: 'Qwigley', cursive;
 }
+
 /*...................................................................NAV */
 
 body #nav {
@@ -79,7 +80,7 @@ body #nav {
 }
 
 .logo {
-    
+
     width: 300px;
     margin: 0 auto;
     position: relative;
@@ -94,13 +95,13 @@ body #nav {
 }
 
 .login_wrapper {
-     background: #f4f4f4;
+    background: #f4f4f4;
     padding: 40px;
 }
 
 .register_wrapper {
-     background: #f4f4f4;
-     padding: 80px;
+    background: #f4f4f4;
+    padding: 80px;
 }
 
 .form-group a {
@@ -155,34 +156,33 @@ p.help-block {
 
 /*...................................................................SHOP WINES PAGE */
 
+/*Add to Basket Button*/
 
-    /*Add to Basket Button*/
-    
-    .icon-btn {
-      visibility: hidden;
-      width: 50px;
-      height: 50px;
-      border: 1px solid #B87333;
-      border-radius: 25px;
-      margin: 0 10px;
-      overflow: hidden;
-      position: relative;
-      transition: width 0.2s ease-in-out;
-    }
-    
-    .add-btn:hover {
-        cursor: pointer;
-    }
-    
-    .cart_icon i {
-        font-size: 35px;
-        margin-top: 2px;
-        color: #B87333;
-    }
-    
-    .cart_icon i:hover {
-        cursor: pointer;
-    }
+.icon-btn {
+    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #B87333;
+    border-radius: 25px;
+    margin: 0 10px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.2s ease-in-out;
+}
+
+.add-btn:hover {
+    cursor: pointer;
+}
+
+.cart_icon i {
+    font-size: 35px;
+    margin-top: 2px;
+    color: #B87333;
+}
+
+.cart_icon i:hover {
+    cursor: pointer;
+}
 
 /*...................................................................CONCEPT PAGE */
 
@@ -238,19 +238,20 @@ p.help-block {
     text-align: right;
     margin-left: 45%;
 }
+
 /*...................................................................EVENTS PAGE */
 
 .event_wrapper {
-      position: relative;
-    bottom: 450px;
+    position: relative;
     background: white;
-    width: 50%;
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 50px;
+    padding: 20px;
 }
+
+
 
 #events {
     position: absolute;
@@ -263,7 +264,6 @@ p.help-block {
 }
 
 /*...................................................................BLOG PAGE */
-
 
 .blog_btn {
     position: relative;
@@ -288,19 +288,19 @@ p.help-block {
     margin: 130px 0 50px 0;
 }
 
-    .post_body {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .post_body {
-        height: 300px;
-        width: auto;
-    }
+.post_body {
+    position: relative;
+    overflow: hidden;
+}
+
+.post_body {
+    height: 300px;
+    width: auto;
+}
 
 .post_body p {
     text-align: center;
-    
+
 }
 
 #posts {
@@ -328,15 +328,16 @@ p.help-block {
 }
 
 #posts .blog_imgs {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        transition: all 1.6s;
-    }
-    
-    #posts .blog_imgs:hover {
-        transform: scale(1.5);
-    }
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: all 1.6s;
+}
+
+#posts .blog_imgs:hover {
+    transform: scale(1.5);
+}
+
 /*...................................................................FOOTER */
 
 footer {
@@ -344,7 +345,8 @@ footer {
     padding: 20px;
     background-color: #171C27;
     height: auto;
-    color: #fff;\text-transform: uppercase;
+    color: #fff;
+    \text-transform: uppercase;
     font-weight: 100;
     letter-spacing: 2px;
 }
@@ -407,6 +409,7 @@ footer {
 
 .email_wrapper {
     background: #fff;
+    margin-top: 40px;
 }
 
 .signup-form {
@@ -414,6 +417,7 @@ footer {
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 2px;
+    padding: 0 15px;
 }
 
 .input-field {
@@ -521,108 +525,150 @@ input {
 }
 
 
-@media (min-width: 767px) {
-    
- .fixed-top.scrolled {
-      background-color: #fff !important;
-      border-bottom: 1px solid #B87333;
-      transition: background-color 90ms linear;
+
+@media (min-width: 568px) {
+    .event_wrapper {
+        position: absolute;
+        top: 350px;
+        right: 25%;
+        width: 50%;
+        background: white;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 25px;
     }
-    
+
+    .event_wrapper p {
+        font-size: 2vw;
+    }
+}
+
+@media (min-width: 767px) {
+
+    .fixed-top.scrolled {
+        background-color: #fff !important;
+        border-bottom: 1px solid #B87333;
+        transition: background-color 90ms linear;
+    }
+
     footer {
         padding: 100px;
     }
-    
+
+
+    .event_wrapper {
+        position: absolute;
+        top: 350px;
+        right: 25%;
+        width: 50%;
+        background: white;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 50px;
+    }
+    .event_wrapper p {
+        font-size: 16px;
+    }
+
     /*Add to Basket Button*/
-    
     .cart_icon i {
         visibility: hidden;
         font-size: 0px;
     }
-    
+
     .icon-btn {
-      visibility: visible;
-      width: 50px;
-      height: 50px;
-      border: 1px solid #B87333;
-      border-radius: 25px;
-      margin: 0 10px;
-      overflow: hidden;
-      position: relative;
-      transition: width 0.2s ease-in-out;
+        visibility: visible;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #B87333;
+        border-radius: 25px;
+        margin: 0 10px;
+        overflow: hidden;
+        position: relative;
+        transition: width 0.2s ease-in-out;
         bottom: 4px;
     }
-    
+
     .add-btn:hover {
-      width: 150px;
+        width: 150px;
     }
-    
+
     .add-btn::before,
     .add-btn::after {
-      transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-      content: "";
-      position: absolute;
-      height: 4px;
-      width: 10px;
-      top: calc(50% - 2px);
-      background: #B87333;
+        transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 10px;
+        top: calc(50% - 2px);
+        background: #B87333;
     }
     .add-btn::after {
-      right: 14px;
-      overflow: hidden;
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
+        right: 14px;
+        overflow: hidden;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
     }
     .add-btn::before {
-      left: 14px;
-      border-top-left-radius: 2px;
-      border-bottom-left-radius: 2px;
+        left: 14px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
     }
     .icon-btn:focus {
-      outline: none;
+        outline: none;
     }
     .btn-txt {
-      opacity: 0;
-      transition: opacity 0.2s;
+        opacity: 0;
+        transition: opacity 0.2s;
     }
     .add-btn:hover::before,
     .add-btn:hover::after {
-      width: 4px;
-      border-radius: 2px;
+        width: 4px;
+        border-radius: 2px;
     }
     .add-btn:hover .btn-txt {
-      opacity: 1;
+        opacity: 1;
     }
     .add-icon::after,
     .add-icon::before {
-      transition: all 0.2s ease-in-out;
-      content: "";
-      position: absolute;
-      height: 20px;
-      width: 2px;
-      top: calc(50% - 10px);
-      background: #B87333;
-      overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 2px;
+        top: calc(50% - 10px);
+        background: #B87333;
+        overflow: hidden;
     }
     .add-icon::before {
-      left: 22px;
-      border-top-left-radius: 2px;
-      border-bottom-left-radius: 2px;
+        left: 22px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
     }
     .add-icon::after {
-      right: 22px;
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
+        right: 22px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
     }
     .add-btn:hover .add-icon::before {
-      left: 15px;
-      height: 4px;
-      top: calc(50% - 2px);
+        left: 15px;
+        height: 4px;
+        top: calc(50% - 2px);
     }
     .add-btn:hover .add-icon::after {
-      right: 15px;
-      height: 4px;
-      top: calc(50% - 2px);
-    }  
+        right: 15px;
+        height: 4px;
+        top: calc(50% - 2px);
+    }
+
 }
 
+@media (min-width: 992px) {
+    .event_wrapper {
+        top: 500px;
+    }
+}
