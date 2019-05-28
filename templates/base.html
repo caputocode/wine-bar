@@ -83,9 +83,12 @@
     <!--Messages-->
 
 {% if messages %}
-<div class="message-wrapper">
+<div class="message-wrapper alert alert-warning alert-dismissible fade show" role="alert">
   {% for message in messages %}
   <h3 id="message-text">{{ message }}</h3>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
   {% endfor %}
 </div>
 {% endif %}
@@ -104,7 +107,7 @@
             <span class="close">&times;</span>
             <div class="search">
                 <form action="{% url 'search' %}" method="GET">
-                    <input class="search-box" type="text" name="q" placeholder="Search by Wine or Grape name" />
+                    <input class="search-box" type="text" name="q" placeholder="Search by Name, Grape or Colour" />
                     <button class="search-btn" type="submit">Search</button>
                 </form>
             </div>
