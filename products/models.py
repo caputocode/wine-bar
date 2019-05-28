@@ -9,6 +9,7 @@ class Wine(models.Model):
     name = models.CharField(max_length=254, default='')
     alcohol = models.CharField(max_length=254, blank=False, default='')
     grape = models.CharField(max_length=254, blank=False, default='')
+    colour = models.CharField(max_length=25, blank=False, default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
     

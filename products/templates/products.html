@@ -4,6 +4,18 @@
 
 
     <div class="container">
+                    <div class="row margin_row">
+                <div id="blogTitle" class="col-xs-12">
+                    <div class="blog_btn">
+                        <h1 class="page_title">Mistral Wine Selection</h1>
+                        <a class="btn btn-warning btn-sm create-btn" href="" role="button">All</a>
+                        <a class="btn btn-warning btn-sm create-btn" href="" role="button">White</a>
+                        <a class="btn btn-warning btn-sm create-btn" href="" role="button">Red</a>
+                        <a class="btn btn-warning btn-sm create-btn" href="" role="button">Rose</a>
+                        <a class="btn btn-warning btn-sm create-btn" href="" role="button">Bubbles</a>
+                    </div>
+                </div>
+            </div>
         <div id="winesRow" class="row margin_row">
             {% for wine in wines %}
             <div class="col-xs-12 col-md-6 col-lg-4">
@@ -18,13 +30,13 @@
                         <form method="POST" action="{% url 'add_to_cart' wine.id %}">
                             {% csrf_token %}
                             <div class="input-group">
-                            <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
-                            <span class="input-group-btn">
-                                <button class="icon-btn add-btn">
-                                        <div class="add-icon"></div>
-                                        <div class="btn-txt">Add to Basket</div>
-                                </button>
-                            </span>
+                                <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                                <span class="input-group-btn">
+                                    <button class="icon-btn add-btn">
+                                            <div class="add-icon"></div>
+                                            <div class="btn-txt">Add to Basket</div>
+                                    </button>
+                                </span>
                             </div>
                         </form>
                     </div>

@@ -5,48 +5,57 @@
 
 <h1 class="basket-title">Basket</h1>
 {% if cart_items %} 
-
 <div class="row margin_row">
-    {% for item in cart_items %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
-                    <h3>{{ item.product.name }}</h3>
-                    <p class="box-description">{{ item.product.description }}</p>
-                    <p>€ {{ item.product.price }}</p>
-                    <div class="caption">
-                        <p>
-                            <div class="qty">
-                                <p><strong>Qty:</strong></p>
+    <div class="col-xs-10 offset-xs-1 col-md-8 offset-md-2">
+        <div class="row">
+            {% for item in cart_items %}
+                <div class="col-xs-10 offset-xs-1 offset-sm-0 col-sm-6 col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
+                            <h3>{{ item.product.name }}</h3>
+                            <p class="box-description">{{ item.product.description }}</p>
+                            <p>€ {{ item.product.price }}</p>
+                            <div class="caption">
+                                <p>
+                                    <div class="qty">
+                                        <p><strong>Qty:</strong></p>
+                                    </div>
+                                    <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form-horizontal">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input value="{{item.quantity}}" class="form-control" type="number" name="quantity" min="0" max="999" required/>
+                                                <span class="input-group-btn">
+                                                    <button class="icon-btn add-btn">
+                                                            <div class="add-icon"></div>
+                                                            <div class="btn-txt">Update</div>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                            <!--<div class="amend">-->
+                                            <!--    <button type="submit" class="btn btn-dark"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Update</button>-->
+                                            <!--</div>-->
+                                    
+                                    </form>
+                                </p>
+                                <div class="empty-cart">
+                                    <a class="btn btn-danger" href="{% url 'remove_cart_items' item.id %}" role="button">Remove</a>
+                                </div>
                             </div>
-                            <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form-horizontal">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input value="{{item.quantity}}" class="form-control" type="number" name="quantity" min="0" max="999" required/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="amend">
-                                        <button type="submit" class="btn btn-dark"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Update</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </p>
-                        <div class="empty-cart">
-                            <a class="btn btn-danger" href="{% url 'remove_cart_items' item.id %}" role="button">Remove</a>
                         </div>
                     </div>
                 </div>
-            </div>
+              {% endfor %}
+                <div class="col-xs-12 col-md-4 total">
+                    <p>Total </p>
+                    <p>€ {{total}}</p>
+                    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+                </div>
         </div>
-      {% endfor %}
-        <div class="col-xs-12 col-md-4 total">
-            <p>Total </p>
-            <p>€ {{total}}</p>
-            <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
-        </div>
+    </div>
 </div>
     {% else %}
 

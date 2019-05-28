@@ -1,13 +1,14 @@
 .margin_row {
-    margin-top: 160px;
+    margin-top: 80px;
 
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     letter-spacing: 3px;
     font-family: 'Montserrat', sans-serif;
 
 }
+
 
 
 /*...................................................................NAV */
@@ -236,6 +237,10 @@ p.help-block {
     margin-left: 45%;
 }
 
+#concept {
+    padding: 40px;
+}
+
 /*...................................................................EVENTS PAGE */
 
 .event_wrapper {
@@ -260,6 +265,13 @@ p.help-block {
 .events_title {
     margin-bottom: 40px;
     color: #B87333;
+}
+
+.events_subtitle {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #B87333;
+
 }
 
 /*...................................................................BLOG PAGE */
@@ -315,12 +327,20 @@ p.help-block {
     bottom: 50px;
 }
 
+#blogpostTitle {
+    margin-top: 20px;
+}
+
 #blogTitle {
     width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 }
 
 /*post detail */
+
+#editBlogpost {
+    margin: 40px 0 30px 0;
+}
 
 #postDetail {
     margin-top: 150px;
@@ -342,6 +362,16 @@ p.help-block {
 
 .contact_subheadings {
     text-align: center;
+}
+
+.subhead {
+    margin: 20px;
+    color: #B87333;
+}
+
+.contact_subheadings p {
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 /*Google map style*/
@@ -428,7 +458,7 @@ footer {
 
 .email_wrapper {
     background: #fff;
-    margin-top: 40px;
+    padding: 40px;
 }
 
 .signup-form {
@@ -455,7 +485,7 @@ footer {
 }
 
 .sign_up_btn {
-    margin: 40px 0;
+    margin-top: 40px;
 
 }
 
@@ -545,26 +575,15 @@ input {
 
 
 
-@media (min-width: 568px) {
-    .event_wrapper {
-        position: absolute;
-        top: 350px;
-        right: 25%;
-        width: 50%;
-        background: white;
-        margin: 0 auto;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding: 25px;
-    }
 
-    .event_wrapper p {
-        font-size: 2vw;
-    }
-}
 
 @media (min-width: 767px) {
+    
+    .margin_row {
+    margin-top: 200px;
+
+}
+
 
     .fixed-top.scrolled {
         background-color: #fff !important;
@@ -576,6 +595,10 @@ input {
         padding: 100px;
     }
 
+    #contactForm {
+        width: 50%;
+        margin: 0 auto;
+    }
 
     .event_wrapper {
         position: absolute;
@@ -687,6 +710,6 @@ input {
 
 @media (min-width: 992px) {
     .event_wrapper {
-        top: 500px;
+        top: 400px;
     }
 }
