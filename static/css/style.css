@@ -9,6 +9,9 @@ h1, h2, h3, h4 {
 
 }
 
+.btn-warning {
+    background-color: #D18133;
+}
 
 
 /*...................................................................NAV */
@@ -17,6 +20,7 @@ body #nav {
     font-size: 12px;
     text-transform: uppercase;
     padding: 30px 25px;
+    background: #fff;
 }
 
 .nav-item a .nav-link {
@@ -264,7 +268,7 @@ p.help-block {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 20px;
+    padding: 25px;
 
 }
 
@@ -279,12 +283,14 @@ p.help-block {
 .events_title {
     margin-bottom: 40px;
     color: #B87333;
+    text-transform: lowercase;
 }
 
-.events_subtitle {
+.event_wrapper .events_subtitle {
     margin-top: 50px;
     margin-bottom: 20px;
     color: #B87333;
+    text-transform: lowercase;
 
 }
 
@@ -658,17 +664,17 @@ input {
 
     .event_wrapper {
         position: absolute;
-        top: 350px;
-        right: 25%;
-        width: 50%;
+        top: 150px;
+        right: 10%;
+        width: 80%;
         margin: 0 auto;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
-        padding: 50px;
+        padding: 40px;
     }
     .event_wrapper p {
-        font-size: 16px;
+        font-size: 1.3vw;
     }
     
     .message-wrapper {
@@ -792,7 +798,7 @@ input {
 
 }
     .event_wrapper {
-        top: 400px;
+        top: 250px;
     }
     
     .menu_wrapper {
