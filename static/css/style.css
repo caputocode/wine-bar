@@ -13,6 +13,18 @@ h1, h2, h3, h4 {
     background-color: #D18133;
 }
 
+.page_title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid orange;
+    padding-bottom: 50px;
+    border-bottom-right-radius: 90%;
+    width: 60%;
+    margin: 0px auto 30px;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+
 
 /*...................................................................NAV */
 
@@ -273,7 +285,6 @@ p.help-block {
 }
 
 
-
 #events {
     position: absolute;
     top: 950px;
@@ -296,24 +307,7 @@ p.help-block {
 
 /*...................................................................BLOG PAGE */
 
-.blog_btn {
-    position: relative;
-    top: 40px;
-    height: auto;
-    margin: 0 auto;
-    text-align: center;
 
-}
-
-.blogpage_title {
-    margin-bottom: 20px;
-    border-bottom: 2px solid orange;
-    padding-bottom: 50px;
-    border-bottom-left-radius: -30px;
-    border-bottom-right-radius: 90%;
-    width: 60%;
-    margin: 0px auto 30px;
-}
 
 .registration {
     background: rgba(255, 255, 255, 0.7);
@@ -407,7 +401,7 @@ p.help-block {
 }
 
 #map {
-  width: 50%;
+  width: 90%;
   height: 300px;
   margin: 0 auto;
 }
@@ -437,6 +431,10 @@ p.help-block {
 #menuTitle {
     width: 100%;
     margin-bottom: 40px;
+}
+
+.menu_note {
+    text-transform: lowercase;
 }
 
 /*...................................................................FOOTER */
@@ -671,10 +669,15 @@ input {
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
-        padding: 40px;
+        padding: 20px 40px;
     }
+    
     .event_wrapper p {
         font-size: 1.3vw;
+    }
+    
+    .event_wrapper .events_subtitle {
+        margin: 20px 0;
     }
     
     .message-wrapper {
@@ -789,6 +792,10 @@ input {
         text-align: left;
 }
 
+    #map {
+      width: 50%;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -796,10 +803,14 @@ input {
         .margin_row {
     margin-top: 200px;
 
-}
+    }
     .event_wrapper {
         top: 250px;
+        right: 15%;
+        width: 70%;
+        padding: 50px;
     }
+    
     
     .menu_wrapper {
         top: 350px;
