@@ -13,7 +13,7 @@
                     <p>{{ post.content }}</p>
                     <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
                     <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                    <a href="{% url 'get_posts' %}" class="btn btn-sm btn-dark">Back to Blog</a>
+                    <a href="{% url 'get_posts' %}" class="btn btn-sm btn-warning">Back to Blog</a>
                     <a href="{% url 'edit_post' post.id %}" class="btn btn-sm btn-danger">Edit Post</a>
                     <hr>
                 </div>

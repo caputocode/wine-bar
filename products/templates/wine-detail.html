@@ -10,7 +10,7 @@
                     {% endif %}
                     <h3 class="card-title">{{ wine.name }}</h3>
                     <h5>Description</h5>
-                    <a href="{% url 'wines' %}" class="btn btn-dark btn-sm">Back to wines</a>
+                    <a href="{% url 'wines' %}" class="btn btn-warning btn-sm">Back to wines</a>
                     <hr>
                     <form method="POST" action="">
                         {% csrf_token %}

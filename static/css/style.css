@@ -3,14 +3,17 @@
 
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     letter-spacing: 3px;
     font-family: 'Montserrat', sans-serif;
 
 }
 
 .btn-warning {
-    background-color: #D18133;
+    background-color: #F3A050;
 }
 
 .page_title {
@@ -169,6 +172,12 @@ p.help-block {
     margin: 10px 0 0 0;
 }
 
+/*...................................................................PROFILE PAGE */
+
+.profileRow {
+    margin: 50px 0;
+}
+
 /*...................................................................SHOP WINES PAGE */
 
 #wineTitle {
@@ -179,6 +188,16 @@ p.help-block {
 
 /*Add to Basket Button*/
 
+.mobile_add_btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #B87333;
+    border-radius: 25px;
+    margin: 0 10px;
+    background-color: transparent;
+    color: #b87333;
+}
+
 .icon-btn {
     visibility: hidden;
     width: 50px;
@@ -187,7 +206,7 @@ p.help-block {
     border-radius: 25px;
     margin: 0 10px;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     transition: width 0.2s ease-in-out;
 }
 
@@ -275,7 +294,7 @@ p.help-block {
 
 .event_wrapper {
     position: relative;
-    background-color: rgba(251,251,251,.6);
+    background-color: rgba(251, 251, 251, .6);
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
@@ -307,7 +326,9 @@ p.help-block {
 
 /*...................................................................BLOG PAGE */
 
-
+.blog_btn {
+    text-align: center;
+}
 
 .registration {
     background: rgba(255, 255, 255, 0.7);
@@ -396,14 +417,14 @@ p.help-block {
 /*Google map style*/
 
 #map-area {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #map {
-  width: 90%;
-  height: 300px;
-  margin: 0 auto;
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
 }
 
 /*Contact Form*/
@@ -413,12 +434,16 @@ p.help-block {
     margin: 0 auto;
 }
 
-/*...................................................................MENU PAGE */
+.submit_btn {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
+/*...................................................................MENU PAGE */
 
 .menu_wrapper {
     position: relative;
-    background-color: rgba(251,251,251,.8);
+    background-color: rgba(251, 251, 251, .8);
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
@@ -554,18 +579,19 @@ footer {
 }
 
 .search-box {
-    width: 80%;
+    width: 90%;
+    margin-bottom: 5px;
 }
 
 /* Modal content */
 
 .modal-content {
     background-color: #fefefe;
-    margin: 40px auto;
-    padding: 125px 25px;
+    margin: 90px auto;
+    padding: 25px;
     text-align: center;
     border: 1px solid #888;
-    width: 50%;
+    width: 90%;
     position: relative;
     top: 80px;
 }
@@ -631,7 +657,6 @@ input {
 
 /* .................................................MEDIA QUERIES */
 
-
 @media (min-width: 767px) {
 
 
@@ -639,6 +664,12 @@ input {
         background-color: #fff !important;
         border-bottom: 1px solid #B87333;
         transition: background-color 90ms linear;
+    }
+
+    .modal-content {
+        width: 50%;
+        padding: 125px 25px;
+        margin: 40px auto;
     }
 
     footer {
@@ -657,8 +688,8 @@ input {
         padding: 30px;
         font-size: 10px;
     }
-    
-    
+
+
 
     .event_wrapper {
         position: absolute;
@@ -671,32 +702,37 @@ input {
         letter-spacing: 2px;
         padding: 20px 40px;
     }
-    
+
     .event_wrapper p {
         font-size: 1.3vw;
     }
-    
+
     .event_wrapper .events_subtitle {
         margin: 20px 0;
     }
-    
+
     .message-wrapper {
         z-index: 100;
-    padding: 30px;
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    text-align: center;
-    border: 2px solid orange;
-    background: black;
-    color: orange;
+        padding: 30px;
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        text-align: center;
+        border: 2px solid orange;
+        background: black;
+        color: orange;
     }
-    
+
     #message-text {
         font-size: 18px;
     }
 
     /*Add to Basket Button*/
+    .mobile_add_btn {
+        visibility: hidden;
+        position: absolute;
+    }
+
     .cart_icon i {
         visibility: hidden;
         font-size: 0px;
@@ -786,22 +822,22 @@ input {
         height: 4px;
         top: calc(50% - 2px);
     }
-    
+
     #conceptText {
         margin-top: 0px;
         text-align: left;
-}
+    }
 
     #map {
-      width: 50%;
+        width: 50%;
     }
 
 }
 
 @media (min-width: 992px) {
-    
-        .margin_row {
-    margin-top: 200px;
+
+    .margin_row {
+        margin-top: 200px;
 
     }
     .event_wrapper {
@@ -810,20 +846,24 @@ input {
         width: 70%;
         padding: 50px;
     }
-    
-    
+
+
     .menu_wrapper {
         top: 350px;
         padding: 50px;
     }
-    
-    
+
+    #contactForm {
+        width: 70%;
+
+    }
+
 
 }
 
 @media (min-width: 1070px) {
 
-    .menu_wrapper{
+    .menu_wrapper {
         width: 70%;
         right: 15%;
         font-size: 1.5vw;
