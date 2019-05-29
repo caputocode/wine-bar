@@ -1,5 +1,5 @@
 .margin_row {
-    margin-top: 80px;
+    margin-top: 100px;
 
 }
 
@@ -413,13 +413,32 @@ p.help-block {
     margin: 0 auto;
 }
 
+/*...................................................................MENU PAGE */
+
+
+.menu_wrapper {
+    position: relative;
+    background-color: rgba(251,251,251,.8);
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px;
+
+}
+
+
+#menuTitle {
+    width: 100%;
+    margin-bottom: 40px;
+}
 
 /*...................................................................FOOTER */
 
 footer {
     width: 100%;
     padding: 20px;
-    background-color: #758481;
+    background-color: #080806;
     height: auto;
     color: #fff;
     \text-transform: uppercase;
@@ -606,14 +625,10 @@ input {
 
 
 
+/* .................................................MEDIA QUERIES */
 
 
 @media (min-width: 767px) {
-    
-    .margin_row {
-    margin-top: 200px;
-
-}
 
 
     .fixed-top.scrolled {
@@ -626,7 +641,20 @@ input {
         padding: 100px;
     }
 
-
+    .menu_wrapper {
+        position: absolute;
+        top: 150px;
+        right: 11%;
+        width: 78%;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 30px;
+        font-size: 10px;
+    }
+    
+    
 
     .event_wrapper {
         position: absolute;
@@ -758,7 +786,29 @@ input {
 }
 
 @media (min-width: 992px) {
+    
+        .margin_row {
+    margin-top: 200px;
+
+}
     .event_wrapper {
         top: 400px;
+    }
+    
+    .menu_wrapper {
+        top: 350px;
+        padding: 50px;
+    }
+    
+    
+
+}
+
+@media (min-width: 1070px) {
+
+    .menu_wrapper{
+        width: 70%;
+        right: 15%;
+        font-size: 1.5vw;
     }
 }

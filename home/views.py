@@ -4,8 +4,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 def index(request):
     """A view that displays the index page"""
     return render(request, "index.html")
-    
-
+   
 def concept(request):
     """A view that displays the concept page"""
     return render(request, "concept.html")
@@ -17,4 +16,8 @@ def events(request):
 def contact(request):
     """A view that displays the contact us page"""
     return render(request, "contact.html")
+    
+def menu(request):
+    """A view that displays the menu page"""
+    return render(request, "menu.html")
     
