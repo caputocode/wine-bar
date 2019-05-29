@@ -8,7 +8,6 @@ from checkout.models import Order, OrderLineItem
 from blogposts.models import Post
 from django.contrib.auth.models import User
 
-# Create your views here.
 
 
 def register(request):
@@ -24,7 +23,7 @@ def register(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, "Registration successful!")
-                return redirect(reverse('index'))
+                return redirect(reverse('wines'))
 
             else:
                 messages.error(request, "unable to log you in at this time!")
@@ -50,7 +49,7 @@ def login(request):
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
-                    return redirect(reverse('index'))
+                    return redirect(reverse('wines'))
             else:
                 user_form.add_error(None, "Your username or password are incorrect")
     else:
@@ -82,6 +81,6 @@ def logout(request):
     """A view that logs the user out and redirects back to the index page"""
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect(reverse('index'))
+    return redirect(reverse('wines'))
 
 
