@@ -1,67 +1,62 @@
-{% extends 'base.html' %}
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
-
-{% block head_js %}
-  <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
-  <script type="text/javascript">
-      //<![CDATA[
-      Stripe.publishableKey = '{{ publishable }}';
-      //]]>
-  </script>
-  <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock head_js %}
-
-
-{% block content %}
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block head_js %}
+<script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock head_js %} {% block content %}
 
 <h1 class="page_title">Checkout</h1>
+<div class="container">
+    <div class="about_us_wrapper">
+        <div id="checkoutFormRow" class="row margin_row">
+            <div class="col-xs-12 col-md-4">
+                <div class="blog_btn page_title">
+                    <h2 class="title">Order Summary</h2>
+                </div>
+        
+                {% for item in cart_items %}
+                <div class="row">
+                    <div class="col-6">
+                        <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-title">{{ item.product.name }}</p>
+                        <p><i class="fas fa-euro-sign"></i> {{ item.product.price }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-12 checkout_total">
+                    <h4>Total: <i class="fas fa-euro-sign"></i> {{ total }}</h4>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <div class="row">
+                    <div id="checkoutForm" class="col-xs-12 col-md-8 offset-md-2">
 
-<div class="about_us_wrapper">
-<div  id="checkoutFormRow" class="row margin_row">
-    <div class="container">
-        <div class="col-xs-12 col-md-4">
-            <h2>Order Summary</h2>
-            {% for item in cart_items %}
-            <div class="row">
-                <div class="col-6">
-                    <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
-                </div>
-                <div class="col-6">
-                    <p class="card-title">{{ item.product.name }}</p>
-                    <p><i class="fas fa-euro-sign"></i> {{ item.product.price }}</p>
-                </div>
-            </div>
-            {% endfor %}
-            <div class="col-12">
-                <p>Total: <i class="fas fa-euro-sign"></i> {{ total }}</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-8">
-            <div class="row">
-                <div id="checkoutForm" class="col-xs-12 col-md-8">
-                
-                    <form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
-                        <legend><i class="far fa-credit-card"></i> Payment Details</legend>
-                        <div id="credit-card-errors" style="display:none">
-                            <div class="alert-message block-message error" id="stripe-error-message"></div>
-                        </div>
-                        <div class="form-group">
-                        {{ order_form | as_bootstrap }}
-                        </div>
-                        <div class="form-group">
-                        {{ payment_form | as_bootstrap }}
-                        </div>
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <i class="fas fa-lock"></i>
-                            <input class="btn btn-dark" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment"/>
-                        </div>
-                    </form>
+                        <form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
+                            <legend><i class="far fa-credit-card"></i> Payment Details</legend>
+                            <div id="credit-card-errors" style="display:none">
+                                <div class="alert-message block-message error" id="stripe-error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                {{ order_form | as_bootstrap }}
+                            </div>
+                            <div class="form-group">
+                                {{ payment_form | as_bootstrap }}
+                            </div>
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <i class="fas fa-lock"></i>
+                                <input class="btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}
