@@ -26,7 +26,7 @@
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-orders" role="tabpanel" aria-labelledby="nav-order-tab">
                 {% if user_orders %}
-                <div id="orders" class="row">
+                <div id="orders" class="row profileRow">
                     <!--  ORDERS -->
                     {% for orders in user_orders %}
                     <div class="orders col-xs-12 col-sm-4 center">
@@ -36,8 +36,54 @@
                             <i class="far fa-calendar-alt fa-3x"></i>
                         </div>
                         <div class="my-auto">
-                            <a href="{% url 'retrieve_order' orders.id %}" class="btn btn-danger btn-sm">Details</a>
+                            <a href="{% url 'retrieve_order' orders.id %}" class="btn btn-warning btn-sm">Details</a>
                         </div>
+                        
+                        <!--bootstrap modal-->
+                        <!-- Button trigger modal -->
+                        <a href="{% url 'retrieve_order' orders.id %}"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                          Details
+                        </button></a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- USERS ORDER LINE ITEMS -->
+        <div class="container">
+        <table>
+            <tr>
+                <th>Wine</th>
+                <th>Quantity</th>
+                <th>Order id</th>
+                <th>Total</th>
+
+            </tr>
+            {% for orders in user_order_details %}
+            <tr>
+                <td>{{ orders.product }}</td>
+                <td>{{ orders.quantity }}</td>
+                <td>{{ order_id }}</td>
+            </tr>
+                {% endfor %}
+        
+        </table>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning order-btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                     </div>
                     {% endfor %}
                 </div>
@@ -73,8 +119,8 @@
                     </div>
                     {% endfor %}
                 </div>
-                <div class="row create_another_post">
-                    <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 create_another_post">
                         <a href="{% url 'new_post' %}" class="btn btn-danger">Create Another Post</a>
                     </div>
                 </div>
