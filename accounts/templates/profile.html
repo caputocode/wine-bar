@@ -35,55 +35,52 @@
                             <p>{{ orders.date }}</p>
                             <i class="far fa-calendar-alt fa-3x"></i>
                         </div>
-                        <div class="my-auto">
-                            <a href="{% url 'retrieve_order' orders.id %}" class="btn btn-warning btn-sm">Details</a>
-                        </div>
-                        
+
                         <!--bootstrap modal-->
                         <!-- Button trigger modal -->
                         <a href="{% url 'retrieve_order' orders.id %}"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                           Details
                         </button></a>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- USERS ORDER LINE ITEMS -->
-        <div class="container">
-        <table>
-            <tr>
-                <th>Wine</th>
-                <th>Quantity</th>
-                <th>Order id</th>
-                <th>Total</th>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- USERS ORDER LINE ITEMS -->
+                                        <div class="container">
+                                            <table>
+                                                <tr>
+                                                    <th>Wine</th>
+                                                    <th>Quantity</th>
+                                                    <th>Order id</th>
+                                                    <th>Total</th>
 
-            </tr>
-            {% for orders in user_order_details %}
-            <tr>
-                <td>{{ orders.product }}</td>
-                <td>{{ orders.quantity }}</td>
-                <td>{{ order_id }}</td>
-            </tr>
-                {% endfor %}
-        
-        </table>
-        </div>
+                                                </tr>
+                                                {% for orders in user_order_details %}
+                                                <tr>
+                                                    <td>{{ orders.product }}</td>
+                                                    <td>{{ orders.quantity }}</td>
+                                                    <td>{{ order_id }}</td>
+                                                </tr>
+                                                {% endfor %}
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning order-btn" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning order-btn" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>

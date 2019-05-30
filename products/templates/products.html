@@ -18,7 +18,7 @@
                     <div class="card">
                     <div class="card-body">
                         <img class="card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img></a>
-                        <h3 class="card-title">{{ wine.name }}</h3>
+                        <h3 class="card-title">{{ wine.name|truncatechars:24 }}</h3>
                         <p class="box-description">{{ wine.grape | title }}</p>
                         <p><strong>£ {{ wine.price }}</strong></p>
 

@@ -457,15 +457,22 @@ p.help-block {
 /*...................................................................MENU PAGE */
 
 .menu_wrapper {
-    position: relative;
-    background-color: #fff;
-    margin: 0 auto;
-    margin-top: -300px;
+    background-color: rgba(251,251,251,.8);
+    margin: 200px auto 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 20px;
 
+}
+
+.menu-img {
+    background-image: url(/../media/images/food-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 
@@ -474,8 +481,32 @@ p.help-block {
     margin-bottom: 40px;
 }
 
+.menu_subheading {
+    padding-bottom: 20px;
+}
+
 .menu_note {
     text-transform: lowercase;
+}
+
+.menu_text p {
+    padding: 15px 0;
+}
+
+.menu_text h5 {
+    padding-bottom: 15px;
+}
+
+.menu_text p:nth-child(odd) {
+      color: #000;
+      opacity: 0.6;
+}
+
+.price {
+    font-size: 14px;
+    padding: 5px 0;
+    display: block;
+    opacity: .6;
 }
 
 /*...................................................................CHECKOUT */
@@ -680,14 +711,6 @@ input {
 
 /* .............................................................MEDIA QUERIES */
 
-@media (min-width: 578px) {
-
-
-    .menu_wrapper {
-        margin-top: -600px;
-    }
-
-}
 
 @media (min-width: 767px) {
 
@@ -714,11 +737,8 @@ input {
 
 
     .menu_wrapper {
-        position: absolute;
-        top: 250px;
-        right: 11%;
         width: 78%;
-        margin: 0 auto;
+        margin: 80px auto;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -886,11 +906,6 @@ input {
     }
 
 
-    .menu_wrapper {
-        top: 350px;
-        padding: 50px;
-    }
-
     #contactForm {
         width: 70%;
 
@@ -903,7 +918,6 @@ input {
 
     .menu_wrapper {
         width: 70%;
-        right: 15%;
-        font-size: 1.5vw;
+        font-size: 20px;
     }
 }
