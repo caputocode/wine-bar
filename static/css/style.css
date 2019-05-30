@@ -31,6 +31,26 @@ h4 {
     text-align: center;
 }
 
+a {
+    color: #2e2e2e;
+}
+
+.message-wrapper {
+    z-index: 100;
+    padding: 30px;
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    top: 200px;
+    text-align: center;
+    border: 2px solid orange;
+    background: black;
+    color: orange;
+}
+
+.message-text {
+    font-size: 14px;
+}
 
 
 /*...................................................................NAV */
@@ -112,17 +132,15 @@ body #nav {
 /*................................................................LOGIN/REGISTER PAGE */
 
 #login {
-    margin-top: 50px;
+
     margin-bottom: 50px;
 }
 
 .login_wrapper {
-    background: #f4f4f4;
-    padding: 40px;
+    padding: 0 40px;
 }
 
 .register_wrapper {
-    background: #f4f4f4;
     padding: 80px;
 }
 
@@ -301,8 +319,8 @@ p.help-block {
     padding-bottom: 20px;
 }
 
-#concept {
-    padding: 40px;
+#about {
+    padding: 20px;
 }
 
 /*...................................................................EVENTS PAGE */
@@ -310,7 +328,7 @@ p.help-block {
 .event_wrapper {
     position: relative;
     background-color: rgba(251, 251, 251, .6);
-    margin: 0 auto;
+    margin: 200px auto 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -318,6 +336,20 @@ p.help-block {
 
 }
 
+.event_img {
+    background-image: url(/../media/images/cheers.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.events_text p {
+    color: #2e2e2e;
+    font-size: 14px;
+    margin: 30px;
+}
 
 #events {
     position: absolute;
@@ -420,7 +452,7 @@ p.help-block {
 }
 
 .subhead {
-    margin: 20px;
+    margin: 20px 0;
     color: #B87333;
 }
 
@@ -457,22 +489,27 @@ p.help-block {
 /*...................................................................MENU PAGE */
 
 .menu_wrapper {
-    background-color: rgba(251,251,251,.8);
+    background-color: rgba(251,251,251,0.8);
     margin: 200px auto 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 20px;
+    
 
 }
 
 .menu-img {
-    background-image: url(/../media/images/food-img.jpg);
-    background-position: center;
+    background-image: url(/../media/images/menu.png);
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     max-height: 100%;
     max-width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+ -ms-background-size: cover; 
 }
 
 
@@ -521,7 +558,7 @@ p.help-block {
 footer {
     width: 100%;
     padding: 20px;
-    background-color: #080806;
+    background-color: #14130F;
     height: auto;
     color: #fff;
     \text-transform: uppercase;
@@ -737,33 +774,31 @@ input {
 
 
     .menu_wrapper {
-        width: 78%;
+        width: 80%;
         margin: 80px auto;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
         padding: 30px;
-        font-size: 10px;
+        font-size: 14px;
         background-color: rgba(251, 251, 251, .8);
     }
 
+    .price {
+        font-size: 12px;
+    }
 
 
     .event_wrapper {
-        position: absolute;
-        top: 140px;
-        right: 10%;
         width: 80%;
-        margin: 20px auto;
+        margin: 80px auto;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
         padding: 20px 40px 5px;
+        background-color: rgba(251, 251, 251, .8);
     }
 
-    .event_wrapper p {
-        font-size: 1.3vw;
-    }
 
     .event_wrapper .events_subtitle {
         margin: 20px 0;
@@ -899,8 +934,6 @@ input {
 
     }
     .event_wrapper {
-        top: 250px;
-        right: 15%;
         width: 70%;
         padding: 50px;
     }
