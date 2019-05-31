@@ -2,17 +2,18 @@
 {% block content %}
 <div class="container">
     <div class="row margin_row">
-        <div class="col-xs-12 col-sm-8 offset-sm-2">
+        <div class="col-xs-12 col-sm-6 offset-sm-3">
             <div class="card mb-3">
                 <div class="card-body">
                     {% if wine.image %}
                     <img class="boxes card-img-top" src="/media/{{ wine.image }}"></img>
                     {% endif %}
                     <h3 class="card-title">{{ wine.name }}</h3>
-                    <h5>Description</h5>
-                    <a href="{% url 'wines' %}" class="btn btn-warning btn-sm">Back to wines</a>
+                    <p class="box-description">{{ wine.grape }}</p>
+                    <span class="winedetail_price"><p>£ {{ wine.price }}</p></span>
+                    <a href="{% url 'wines' %}" class="btn btn-outline-warning btn-sm">Back to wines</a>
                     <hr>
-                    <form method="POST" action="">
+                    <form method="POST" action="{% url 'add_to_cart' wine.id %}">
                         {% csrf_token %}
                         <div class="input-group">
                             <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />

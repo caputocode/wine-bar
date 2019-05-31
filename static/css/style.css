@@ -1,5 +1,5 @@
 body {
-  overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .margin_row {
@@ -16,8 +16,8 @@ h4 {
 
 }
 
-.btn-warning {
-    background-color: #F3A050;
+.btn-outline-warning {
+    color: #F3A050;
 }
 
 .page_title {
@@ -35,6 +35,12 @@ a {
     color: #2e2e2e;
 }
 
+a:hover {
+    color: #2e2e2e;
+    text-decoration: none;
+
+}
+
 .message-wrapper {
     z-index: 100;
     padding: 30px;
@@ -50,6 +56,14 @@ a {
 
 .message-text {
     font-size: 14px;
+}
+
+.blog_btn p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2e2e2e;
+    width: 70%;
+    margin: 10px auto;
 }
 
 
@@ -78,7 +92,7 @@ body #nav {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height:100vh;
+    height: 100vh;
 }
 
 .mistral_title {
@@ -211,12 +225,22 @@ p.help-block {
 .order_dated {
     margin-bottom: 25px;
 }
+
 /*...................................................................SHOP WINES PAGE */
 
 #wineTitle {
     padding: 10px 0 20px 15px;
     border-bottom: 2px solid orange;
     margin-bottom: 30px;
+}
+
+.wines {
+    margin-bottom: 20px;
+}
+
+.winedetail_price {
+    opacity: .6;
+    font-size: 13px;
 }
 
 /*Add to Basket Button*/
@@ -403,15 +427,27 @@ p.help-block {
 
 #posts {
     text-align: center;
+    margin-bottom: 30px;
+}
+
+#posts .blog_imgs:hover {
+    transform: scale(1.5);
 }
 
 .create-btn {
     position: relative;
 }
 
-.read_more_btn {
-    position: relative;
-    bottom: 50px;
+/*.read_more_btn {*/
+
+/*    position: relative;*/
+
+/*    bottom: 50px;*/
+
+/*}*/
+
+.margin_bottom {
+    margin-bottom: 90px;
 }
 
 #blogpostTitle {
@@ -430,7 +466,6 @@ p.help-block {
 }
 
 #postDetail {
-    margin-top: 150px;
     margin-bottom: 100px;
 }
 
@@ -441,9 +476,12 @@ p.help-block {
     transition: all 1.6s;
 }
 
-#posts .blog_imgs:hover {
-    transform: scale(1.5);
+
+.lighttext {
+    opacity: .6;
+    font-size: 14px;
 }
+
 
 /*...................................................................CONTACT */
 
@@ -489,13 +527,13 @@ p.help-block {
 /*...................................................................MENU PAGE */
 
 .menu_wrapper {
-    background-color: rgba(251,251,251,0.8);
+    background-color: rgba(251, 251, 251, 0.8);
     margin: 200px auto 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 20px;
-    
+
 
 }
 
@@ -506,10 +544,10 @@ p.help-block {
     background-size: cover;
     max-height: 100%;
     max-width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
- -ms-background-size: cover; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
 }
 
 
@@ -535,8 +573,8 @@ p.help-block {
 }
 
 .menu_text p:nth-child(odd) {
-      color: #000;
-      opacity: 0.6;
+    color: #000;
+    opacity: 0.6;
 }
 
 .price {
@@ -547,7 +585,6 @@ p.help-block {
 }
 
 /*...................................................................CHECKOUT */
-
 
 .checkout_total {
     margin-top: 25px;
@@ -748,7 +785,6 @@ input {
 
 /* .............................................................MEDIA QUERIES */
 
-
 @media (min-width: 767px) {
 
 
@@ -759,9 +795,9 @@ input {
     }
 
     .modal-content {
-        width: 50%;
-        padding: 125px 25px;
-        margin: 40px auto;
+        width: 60%;
+        padding: 80px 25px;
+        margin: 80px auto;
     }
 
     .page_title {

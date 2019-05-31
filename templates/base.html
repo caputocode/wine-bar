@@ -37,7 +37,7 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active one">
-                        <a class="nav-link" href="{% url 'concept' %}">About Us <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'concept' %}">About<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active two">
                         <a class="nav-link" href="{% url 'wines' %}">Wines <span class="sr-only">(current)</span></a>
@@ -49,7 +49,7 @@
                         <a class="nav-link" href="{% url 'get_posts' %}">Blog <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active five">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact Us <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active six">
                         <a class="nav-link" href="{% url 'menu' %}">Menu <span class="sr-only">(current)</span></a>
@@ -165,12 +165,12 @@
                 <div class="explore_wrapper">
                     <h5>Explore</h5>
                     <ul class="footer_explore">
-                        <li><a href="">Concept</a></li>
-                        <li><a href="">Wines</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a href="">Menu</a></li>
-
+                        <li><a href="{% url 'concept' %}">About</a></li>
+                        <li><a href="{% url 'wines' %}">Wines</a></li>
+                        <li><a href="{% url 'events' %}">Events</a></li>
+                        <li><a href="{% url 'get_posts' %}">Blog</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'menu' %}">Menu</a></li>
                     </ul>
                 </div>
             </div>

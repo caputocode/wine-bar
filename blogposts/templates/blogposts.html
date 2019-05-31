@@ -15,12 +15,12 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row margin_bottom">
             {% for post in posts %}
             <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
                     <div id="posts">
                         <div class="post_body">
-                            <img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img>
+                            <a href="{% url 'post_detail' post.id %}"><img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img></a>
                             <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-warning btn-sm read_more_btn">Read more</a></p>
                         </div>
                         <div class="blog_title">
