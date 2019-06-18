@@ -1,14 +1,14 @@
 {% extends "base.html" %} {% load static from staticfiles %} {% block content %}
 
-<div class="profile_wrapper">
-    <div class="container">
-        <div class="row margin_row">
-            <div id="blogTitle" class="col-xs-12">
-                <div class="blog_btn">
-                    <h1 class="page_title">Profile</h1>
-                </div>
+<div class="container">
+    <div class="row margin_row">
+        <div id="profileTitle" class="col-xs-12">
+            <div class="blog_btn">
+                <h1 class="page_title">Profile</h1>
             </div>
         </div>
+    </div>
+    <div class="container">
         <div id="profile" class="row">
 
             <div class="col-xs-12 col-sm-9 col-md-6">
@@ -38,49 +38,11 @@
 
                         <!--bootstrap modal-->
                         <!-- Button trigger modal -->
-                        <a href="{% url 'retrieve_order' orders.id %}"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <a href="{% url 'retrieve_order' orders.id %}"><button type="button" class="btn btn-sm btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
                           Details
                         </button></a>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- USERS ORDER LINE ITEMS -->
-                                        <div class="container">
-                                            <table>
-                                                <tr>
-                                                    <th>Wine</th>
-                                                    <th>Quantity</th>
-                                                    <th>Order id</th>
-                                                    <th>Total</th>
-
-                                                </tr>
-                                                {% for orders in user_order_details %}
-                                                <tr>
-                                                    <td>{{ orders.product }}</td>
-                                                    <td>{{ orders.quantity }}</td>
-                                                    <td>{{ order_id }}</td>
-                                                </tr>
-                                                {% endfor %}
-
-                                            </table>
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-warning order-btn" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     {% endfor %}
                 </div>
@@ -89,9 +51,9 @@
 
 
                 <div class="row profileRow">
-                    <div class="col-xs-10 offset-xs-1 col-sm-6 center">
+                    <div class="col-xs-10 offset-xs-1 col-sm-6">
                         <p class="card-text">You haven't placed any orders yet {{ user | title }}</p>
-                        <a href="{% url 'wines' %}" class="btn btn-warning">Browse Wines</a>
+                        <a href="{% url 'wines' %}" class="btn btn-outline-warning">Browse Wines</a>
                     </div>
                 </div>
                 {% endif %}
@@ -106,8 +68,8 @@
                     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
                         <div id="posts">
                             <div class="post_body">
-                                <img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img>
-                                <p><a href="{% url 'post_detail' post.id %}" class="btn btn-warning btn-sm read_more_btn">Read more</a></p>
+                                <a href="{% url 'post_detail' post.id %}"><img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img></a>
+                                <p><a href="{% url 'post_detail' post.id %}" class="btn btn-outline-warning btn-sm read_more_btn">Read more</a></p>
                             </div>
                             <div class="blog_title">
                                 <h4 id="blogpostTitle" class="card-title">{{ post.title }}</h4>
@@ -118,7 +80,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 create_another_post">
-                        <a href="{% url 'new_post' %}" class="btn btn-danger">Create Another Post</a>
+                        <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Another Post</a>
                     </div>
                 </div>
 
@@ -126,9 +88,8 @@
 
                 <div class="row profileRow">
                     <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-6 center">
-                        <h4 class="my_blogposts">My Blog Posts</h4>
                         <p class="">{{ user | title }} you have not submiitted any blog posts yet.</p>
-                        <a href="{% url 'new_post' %}" class="btn btn-dark">Create Post</a>
+                        <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Post</a>
                     </div>
                 </div>
 

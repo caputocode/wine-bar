@@ -74,7 +74,7 @@ def retrieve_order(request, pk):
     """Shows users order details """
 
     user_order_details = (OrderLineItem.objects.filter(order_id=pk))
-    return render(request, 'profile.html', {
+    return render(request, 'orders.html', {
         'user_order_details': user_order_details, 'order_id': pk})
    
 def logout(request):

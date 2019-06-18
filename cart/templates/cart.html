@@ -1,76 +1,83 @@
-{% extends 'base.html' %} 
-{% load staticfiles %} 
-{% load bootstrap_tags %} 
-{% block content %}
+{% extends 'base.html' %} {% load staticfiles %} {% load bootstrap_tags %} {% block content %}
 
-<h1 class="basket-title">Basket</h1>
-{% if cart_items %} 
-<div class="row margin_row">
-    <div class="col-xs-10 offset-xs-1 col-md-8 offset-md-2">
-        <div class="row">
+
+<div class="container">
+    <div id="checkoutFormRow" class="row margin_row">
+        <div class="col-xs-12 col-md-8">
+            <div class="blog_btn page_title">
+                <h2 class="title">Basket</h2>
+            </div>
+            {% if cart_items %} 
             {% for item in cart_items %}
-                <div class="col-xs-10 offset-xs-1 offset-sm-0 col-sm-6 col-md-4">
-                    <div class="card">
-                        <div class="card-body">
+            <div class="row margin_row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
                             <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
-                            <h3>{{ item.product.name }}</h3>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-title">{{ item.product.name }}</p>
                             <p class="box-description">{{ item.product.description }}</p>
-                            <p>€ {{ item.product.price }}</p>
-                            <div class="caption">
-                                <p>
-                                    <div class="qty">
-                                        <p><strong>Qty:</strong></p>
-                                    </div>
-                                    <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form-horizontal">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <input value="{{item.quantity}}" class="form-control" type="number" name="quantity" min="0" max="999" required/>
-                                                <span class="input-group-btn">
-                                                    <button class="icon-btn add-btn">
-                                                            <div class="add-icon"></div>
-                                                            <div class="btn-txt">Update</div>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                            <!--<div class="amend">-->
-                                            <!--    <button type="submit" class="btn btn-dark"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Update</button>-->
-                                            <!--</div>-->
-                                    
-                                    </form>
-                                </p>
-                                <div class="empty-cart">
-                                    <a class="btn btn-danger" href="{% url 'remove_cart_items' item.id %}" role="button">Remove</a>
-                                </div>
-                            </div>
+                            <p><i class="fas fa-pound-sign"></i> {{ item.product.price }}</p>
                         </div>
                     </div>
                 </div>
-              {% endfor %}
-                <div class="col-xs-12 col-md-4 total">
-                    <h3>Total</h3>
-                    <p>€ {{total}}</p>
-                    <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+                <div class="col-12">
+                    <div class="caption">
+                        <p>
+                            <div class="qty">
+                                <p><strong>Qty:</strong></p>
+                            </div>
+                            <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form-horizontal">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div id="quantityBox" class="input-group">
+                                        <input value="{{item.quantity}}" class="form-control" type="number" name="quantity" min="0" max="999" required/>
+                                        <span class="input-group-btn">
+                                            <button class="icon-btn add-btn">
+                                                <div class="add-icon"></div>
+                                                <div class="btn-txt">Update</div>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </p>
+                        <div class="empty-cart">
+                            <a class="btn btn-sm btn-outline-danger" href="{% url 'remove_cart_items' item.id %}" role="button">Remove</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+{% endfor %}
+        </div>
+        <div class="col-xs-12 col-md-4 total">
+            <h3>Total</h3>
+            <p>€ {{total}}</p>
+            <a href="{% url 'checkout' %}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
         </div>
     </div>
 </div>
-    {% else %}
 
-    <!-- If cart is EMPTY -->
-    <div class="row">
-        <div class="container">
-            <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4 empty-cart">
-                <div class="card wrapper">
-                    <div class="card-body">
-                        <h5 class="card-title">My Cart</h5>
-                        <p class="card-text">You have no items your cart.</p>
-                        <a href="{% url 'wines' %}" class="btn btn-dark">Shop Wines</a>
-                    </div>
+
+</div>
+</div>
+
+
+{% else %}
+
+<!-- If cart is EMPTY -->
+<div class="row margin_row">
+    <div class="container">
+        <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4 empty-cart">
+            <div class="card wrapper">
+                <div class="card-body">
+                    <h5 class="card-title">My Cart</h5>
+                    <p class="card-text">You have no items your cart.</p>
+                    <a href="{% url 'wines' %}" class="btn btn-sm btn-outline-warning">Shop Wines</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endif %} {% endblock %}

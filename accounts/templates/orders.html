@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load static from staticfiles %} {% block content %}
+<div class="container">
+    <div class="row margin_row">
+        <div id="profileTitle" class="col-xs-12">
+            <div class="blog_btn">
+                <h1 class="page_title">My orders</h1>
+            </div>
+        </div>
+        <!-- USERS ORDER LINE ITEMS -->
+        <div class="container">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <table>
+                        <tr>
+                            <th>Wine</th>
+                            <th>Quantity</th>
+                            <th>Order id</th>
+
+                        </tr>
+                        {% for orders in user_order_details %}
+                        <tr>
+                            <td>{{ orders.product }}</td>
+                            <td>{{ orders.quantity }}</td>
+                            <td>{{ order_id }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <div class="row margin_row">
+                <div class="col-xs-12 create_another_post">
+                    <a href="{% url 'profile' %}" class="btn btn-sm btn-outline-warning">Back to Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
