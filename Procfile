@@ -1,1 +1,1 @@
-web: gunicorn wine-bar.wsgi:application
+web: gunicorn winebar.wsgi:application
