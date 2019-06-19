@@ -1,1 +1,1 @@
-web: gunicorn mistral-wine-bar.wsgi:application
+web: gunicorn wine-bar.wsgi:application
