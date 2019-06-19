@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wine-bar-codecap.c9users.io']
+ALLOWED_HOSTS = [os.environ.get('wine-bar-codecap.c9users.io'),'mistral-wine-bar.herokuapp.com']
 
 
 # Application definition
