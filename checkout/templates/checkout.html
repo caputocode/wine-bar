@@ -8,7 +8,6 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock head_js %} {% block content %}
 
-<h1 class="page_title">Checkout</h1>
 <div class="container">
     <div id="checkoutFormRow" class="row margin_row">
         <div class="col-xs-12 col-md-4">
@@ -24,13 +23,14 @@
                 <div class="col-6">
                     <p class="card-title">{{ item.product.name }}</p>
                     <p><i class="fas fa-pound-sign"></i> {{ item.product.price }}</p>
+                    <p>Qty: {{ item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}
             <div class="col-12 checkout_total">
                 <p>Total: <i class="fas fa-pound-sign"></i> {{ total }}</p>
             </div>
-            <div class="empty-cart">
+            <div class="back_to_basket">
                 <a class="btn btn-sm btn-outline-warning" href="{% url 'view_cart' %}" role="button">Back to Basket</a>
             </div>
         </div>

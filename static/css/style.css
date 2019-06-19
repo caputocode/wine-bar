@@ -20,10 +20,14 @@ h4 {
     color: #F3A050;
 }
 
+.main_title {
+    width: 100%;
+}
+
 .page_title {
-    margin-bottom: 20px;
     border-bottom: 2px solid #FFA500;
     padding-bottom: 50px;
+    padding-top: 30px;
     border-bottom-right-radius: 90%;
     width: 75%;
     margin: 0px auto 30px;
@@ -41,6 +45,12 @@ a:hover {
 
 }
 
+.italic_note {
+    text-transform: lowercase;
+}
+
+/*Message alert */
+
 .message-wrapper {
     z-index: 100;
     padding: 30px;
@@ -55,16 +65,10 @@ a:hover {
 }
 
 .message-text {
-    font-size: 14px;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
-.blog_btn p {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #2e2e2e;
-    width: 70%;
-    margin: 10px auto;
-}
 
 
 /*...................................................................NAV */
@@ -82,6 +86,10 @@ body #nav {
 
 .logo_nav {
     width: 200px;
+}
+
+#menuHeader a {
+    color: #B87333;
 }
 
 /*.................................................................INDEX PAGE */
@@ -151,11 +159,11 @@ body #nav {
 }
 
 .login_wrapper {
-    padding: 0 40px;
+    padding: 20px;
 }
 
 .register_wrapper {
-    padding: 80px;
+    padding: 20px;
 }
 
 .form-group a {
@@ -228,10 +236,7 @@ p.help-block {
     margin-bottom: 25px;
 }
 
-#profileTitle {
-    margin-bottom: 20px;
-    width: 100%;
-}
+
 
 .profile-title {
     margin-bottom: 30px;
@@ -240,19 +245,9 @@ p.help-block {
 /*...................................................................ORDERS PAGE */
 
 
-th {
-    background: orange;
-    opacity: .7;
-    text-align: center;
-    color: white;
-    letter-spacing: 2px;
-    padding: 10px; 
-}
+.table-striped tbody tr:nth-of-type(odd) {
+        background: rgba(255,152,0,.2);
 
-td  {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid orange;
 }
 
 /*...................................................................SHOP WINES PAGE */
@@ -265,6 +260,11 @@ td  {
 
 .wines {
     margin-bottom: 20px;
+}
+
+.buy_wine {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .winedetail_price {
@@ -381,7 +381,7 @@ td  {
 .event_wrapper {
     position: relative;
     background-color: rgba(251, 251, 251, .6);
-    margin: 200px auto 0;
+    margin: 0px auto;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -390,7 +390,7 @@ td  {
 }
 
 .event_img {
-    background-image: url(../media/images/cheers.jpg);
+    background-image: url(/../media/images/cheers.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -411,9 +411,7 @@ td  {
 }
 
 .events_title {
-    margin-bottom: 40px;
-    color: #B87333;
-    text-transform: lowercase;
+    width: 100%;
 }
 
 .event_wrapper .events_subtitle {
@@ -424,11 +422,25 @@ td  {
 
 }
 
+.contact_link a:hover {
+    color: #B87333;
+    cursor: pointer;
+}
+
 /*...................................................................BLOG PAGE */
 
 .blog_btn {
     text-align: center;
 }
+
+.blog_btn p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2e2e2e;
+    width: 70%;
+    margin: 10px auto 30px;
+}
+
 
 .registration {
     background: rgba(255, 255, 255, 0.7);
@@ -474,12 +486,12 @@ td  {
 }
 
 #blogpostTitle {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 #blogTitle {
     width: 100%;
-    margin-bottom: 90px;
+    margin-bottom: 40px;
 }
 
 /*post detail */
@@ -488,9 +500,7 @@ td  {
     margin: 40px 0 30px 0;
 }
 
-#postDetail {
-    margin-bottom: 100px;
-}
+
 
 #posts .blog_imgs {
     width: 100%;
@@ -510,6 +520,7 @@ td  {
 
 .contact_subheadings {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .subhead {
@@ -555,8 +566,8 @@ td  {
 /*...................................................................MENU PAGE */
 
 .menu_wrapper {
-    background-color: rgba(251, 251, 251, 0.8);
-    margin: 200px auto 0;
+    background-color: rgba(251, 251, 251, 0.7);
+    margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -588,9 +599,6 @@ td  {
     padding-bottom: 20px;
 }
 
-.menu_note {
-    text-transform: lowercase;
-}
 
 .menu_text p {
     padding: 15px 0;
@@ -616,6 +624,22 @@ td  {
     width: 60%;
 }
 
+/*...................................................................BASKET */
+
+
+.cart {
+    padding: 35px;
+    text-align: center;
+}
+
+#shopWines {
+    text-align: center;
+}
+
+.no_items {
+    text-align: center;
+}
+
 /*...................................................................CHECKOUT */
 
 .checkout_total {
@@ -632,6 +656,14 @@ td  {
 
 .submit_payment_btn {
     text-align: center;
+}
+
+.basket_total {
+    margin: 0 0 20px 10px;
+}
+
+.back_to_basket {
+    margin-bottom: 30px;
 }
 
 /*...................................................................FOOTER */
@@ -720,7 +752,7 @@ footer {
 .modal-content {
     background-color: #fefefe;
     margin: 90px auto;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     border: 1px solid #888;
     width: 90%;
@@ -797,6 +829,11 @@ input {
         border-bottom: 1px solid #B87333;
         transition: background-color 90ms linear;
     }
+    
+    .main_title {
+        width: 100%;
+        margin-bottom: 40px;
+    }
 
     .modal-content {
         width: 60%;
@@ -812,6 +849,9 @@ input {
         padding: 100px;
     }
 
+    #about {
+        margin-bottom: 40px;
+    }
 
     .menu_wrapper {
         width: 80%;
@@ -977,6 +1017,10 @@ input {
     .submit_payment_btn {
         text-align: left;
     }
+    
+    #postDetail {
+    margin-bottom: 100px;
+}
 
 
 }
@@ -1005,6 +1049,7 @@ input {
 
     .menu_wrapper {
         width: 70%;
-        font-size: 20px;
     }
 }
+
+

@@ -20,7 +20,7 @@ def add_to_cart(request, id):
     cart[id] = cart.get(id, quantity)
     
     request.session['cart'] = cart
-    return redirect(reverse('wines'))
+    return redirect('view_cart')
 
  
 @login_required   

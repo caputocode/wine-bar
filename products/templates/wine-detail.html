@@ -6,7 +6,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     {% if wine.image %}
-                    <img class="boxes card-img-top" src="/media/{{ wine.image }}"></img>
+                    <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img>
                     {% endif %}
                     <h3 class="card-title">{{ wine.name }}</h3>
                     <p class="box-description">{{ wine.grape }}</p>

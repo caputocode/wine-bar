@@ -2,10 +2,8 @@
 
 <div class="container">
     <div class="row margin_row">
-        <div id="profileTitle" class="col-xs-12">
-            <div class="blog_btn">
-                <h1 class="page_title">Profile</h1>
-            </div>
+        <div class="col-xs-12 main_title">
+            <h1 class="page_title">profile</h1>
         </div>
     </div>
     <div class="container">
@@ -53,7 +51,7 @@
                 <div class="row profileRow">
                     <div class="col-xs-10 offset-xs-1 col-sm-6">
                         <p class="card-text">You haven't placed any orders yet {{ user | title }}</p>
-                        <a href="{% url 'wines' %}" class="btn btn-outline-warning">Browse Wines</a>
+                        <a href="{% url 'wines' %}" class="btn btn-sm btn-outline-warning">Browse Wines</a>
                     </div>
                 </div>
                 {% endif %}

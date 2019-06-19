@@ -5,15 +5,13 @@
         <div class="col-xs-12 event_img">
             <div class="col-xs-12 event_wrapper">
                 <div class="row">
-                    <div class="col-xs-12 page_title">
-                        <div class="blog_btn">
-                            <h1 id="eventsTitle">Special Occasion?</h1>
-                        </div>
+                      <div class="col-xs-12 events_title">
+                        <h1 class="page_title">special occassion?</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col events_text">
-                        <p>we are also available to provide wine tastings and other small events. Get in touch with us via socials or our contact form for more details</p>
+                        <span class="italic_note"><p><em>we are also available to provide wine tastings and other small events. Get in touch with us via socials or our <span class="contact_link"><a href="{% url 'contact' %}">contact form</a></span> for more details.</em></p></span>
                         <h4 class="events_subtitle">Tasting Events</h4>
                         <p>On the last Wednesday of every month we hold our ‘free pour’ tasting. It’s an informal get together where you can try a range of wines at your own speed. We also hold lots of other events throughout the year. You can see what’s on here.</p>
                         <h4 class="events_subtitle">Private Hire</h4>
@@ -21,8 +19,9 @@
                    </div>
                 </div>
             </div>
+            <div class="bubbles"></div>
         </div>
-    </div>
+    </div>  
 </div>
 
 {% endblock %}

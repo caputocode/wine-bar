@@ -51,7 +51,7 @@
                     <li class="nav-item active five">
                         <a class="nav-link" href="{% url 'contact' %}">Contact<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active six">
+                    <li id="menuHeader" class="nav-item active six">
                         <a class="nav-link" href="{% url 'menu' %}">Menu <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
@@ -88,7 +88,7 @@
 {% if messages %}
 <div class="message-wrapper alert alert-warning alert-dismissible fade show" role="alert">
   {% for message in messages %}
-  <h3 id="message-text">{{ message }}</h3>
+  <p id="message-text">{{ message }}</p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -111,7 +111,7 @@
             <div class="search">
                 <form action="{% url 'search' %}" method="GET">
                     <input class="search-box" type="text" name="q" placeholder="Name, Grape or Type eg 'red'" />
-                    <button class="search-btn" type="submit">Search Wines</button>
+                    <button class="btn btn-outline-warning" type="submit">Search Wines</button>
                 </form>
             </div>
         </div>

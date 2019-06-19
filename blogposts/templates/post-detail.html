@@ -6,7 +6,7 @@
         <div class="card mb-3 wrapper">
             <div class="card-body">
                 {% if post.image %}
-                <img class="boxes card-img-top" src="/media/{{ post.image }}"></img>
+                <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ post.image }}"></img>
                 {% endif %}
                 <h3 id="editBlogpost" class="card-title">{{ post.title }}</h3>
                     <p>{{ post.content }}</p>
