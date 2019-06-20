@@ -640,6 +640,17 @@ p.help-block {
     text-align: center;
 }
 
+.icon-btn {
+    visibility: visible;
+    padding: 5px;
+    border: 1px solid orange;
+    font-size: 14px;
+}
+
+.icon-btn:hover {
+    background: orange;
+}
+
 /*...................................................................CHECKOUT */
 
 .checkout_total {
