@@ -921,6 +921,7 @@ input {
     }
 
     /*Add to Basket Button*/
+    
     .mobile_add_btn {
         visibility: hidden;
         position: absolute;
@@ -942,6 +943,11 @@ input {
         position: relative;
         transition: width 0.2s ease-in-out;
         bottom: 4px;
+    }
+    
+    #addBtn {
+        position: relative;
+        visibility: visible;
     }
 
     .add-btn:hover {
