@@ -641,15 +641,19 @@ p.help-block {
 }
 
 .icon-btn {
+
     visibility: visible;
     padding: 5px;
-    border: 1px solid orange;
+    border: 1px solid #B87333;
     font-size: 14px;
+    border-radius: 5%;
+    position: unset;
+    height: auto;
+    width: auto;
+    color: #B87333;
 }
 
-.icon-btn:hover {
-    background: orange;
-}
+
 
 /*...................................................................CHECKOUT */
 
