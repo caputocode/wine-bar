@@ -310,6 +310,11 @@ p.help-block {
     cursor: pointer;
 }
 
+#addBtn {
+    visibility: hidden;
+    position: absolute;
+}
+
 /*...................................................................CONCEPT PAGE */
 
 #conceptText {
