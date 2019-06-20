@@ -8,7 +8,7 @@
     {% if cart_items %}
     <div class="row margin_bottom">
         {% for item in cart_items %}
-        <div class="col-xs-10 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card wines">
                 <div class="card-body">
                     <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
@@ -30,14 +30,14 @@
                                                 <div class="add-icon"></div>
                                                 <div class="btn-txt">Update</div>
                                             </button>
-                                            <button class="mobile_add_btn">update</button>
                                         </span>
                                     </div>
                                 </div>
                             </form>
                         </p>
                         <div class="empty-cart">
-                            <a class="btn btn-sm btn-outline-warning" href="{% url 'remove_cart_items' item.id %}" role="button">Remove</a>
+                            <a class="btn btn-sm btn-outline-danger" href="{% url 'remove_cart_items' item.id %}" role="button">Remove</a>
+                            <a class="btn btn-sm btn-outline-warning update_hide" href="{% url 'adjust_cart' item.id %}" role="button">Update</a>
                         </div>
                     </div>
                 </div>

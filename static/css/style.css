@@ -995,6 +995,12 @@ input {
         height: 4px;
         top: calc(50% - 2px);
     }
+    
+    /*update button*/
+    
+    .update_hide {
+         visibility: hidden;   
+    }
 
     #conceptText {
         margin-top: 0px;
