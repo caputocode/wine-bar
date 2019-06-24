@@ -4,11 +4,13 @@
 
 <div class="register_wrapper">
     <div class="container">
-    <div class="row margin_row">
-        <div class="col-xs-12 main_title">
-            <h1 class="page_title">register</h1>
+        <!--Page title-->
+        <div class="row margin_row">
+            <div class="col-xs-12 main_title">
+                <h1 class="page_title">register</h1>
+            </div>
         </div>
-    </div>
+        <!--Register Form-->
         <div class="row justify-content-center">
             <div class="col-xs-12 col-md-6 login_form">
                 <form method="post" action="{% url 'register' %}" class="accountform">
@@ -24,4 +26,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

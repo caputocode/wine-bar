@@ -4,12 +4,8 @@
 
 /*..............................................................GENERAL STYLES*/
 
-html, body {
-    overflow-x: hidden !important;
-}
-
 body {
-    position: relative;
+    overflow-x: hidden !important;
 }
 
 .margin_row {
@@ -75,32 +71,11 @@ a:hover {
 }
 
 .message-text {
-    font-size: 16px;
     letter-spacing: 2px;
+    font-size: 16px;
 }
 
 
-
-/*...................................................................NAV */
-
-body #nav {
-    font-size: 12px;
-    text-transform: uppercase;
-    padding: 30px 25px;
-    background: #fff;
-}
-
-.nav-item a .nav-link {
-    padding: 40px 25px;
-}
-
-.logo_nav {
-    width: 200px;
-}
-
-#menuHeader a {
-    color: #B87333;
-}
 
 /*.................................................................INDEX PAGE */
 
@@ -123,7 +98,7 @@ body #nav {
     letter-spacing: 1px;
     margin: 0 15px;
     cursor: pointer;
-    
+
 }
 
 .index_btn:hover {
@@ -134,7 +109,7 @@ body #nav {
 
 #indexRow {
     position: relative;
-    top: 34%;
+    top: 40%;
 }
 
 .index_buttons {
@@ -148,7 +123,28 @@ body #nav {
     width: 300px;
     margin: 0 auto;
     position: relative;
-    top: 32%;
+    top: 38%;
+}
+
+/*...................................................................NAV */
+
+body #nav {
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 30px 25px;
+    background: #fff;
+}
+
+.nav-item a .nav-link {
+    padding: 40px 25px;
+}
+
+.logo_nav {
+    width: 200px;
+}
+
+#menuHeader a {
+    color: #B87333;
 }
 
 /*................................................................LOGIN/REGISTER PAGE */
@@ -220,7 +216,7 @@ p.help-block {
 
 .profileRow {
     margin: 50px 0;
-        text-align: center;
+    text-align: center;
 
 }
 
@@ -245,9 +241,8 @@ p.help-block {
 
 /*...................................................................ORDERS PAGE */
 
-
 .table-striped tbody tr:nth-of-type(odd) {
-        background: rgba(255,152,0,.2);
+    background: rgba(255, 152, 0, .2);
 
 }
 
@@ -632,7 +627,6 @@ p.help-block {
 
 /*...................................................................BASKET */
 
-
 .cart {
     padding: 35px;
     text-align: center;
@@ -850,7 +844,7 @@ input {
         border-bottom: 1px solid #B87333;
         transition: background-color 90ms linear;
     }
-    
+
     .main_title {
         width: 100%;
         margin-bottom: 40px;
@@ -922,7 +916,6 @@ input {
     }
 
     /*Add to Basket Button*/
-    
     .mobile_add_btn {
         visibility: hidden;
         position: absolute;
@@ -945,7 +938,7 @@ input {
         transition: width 0.2s ease-in-out;
         bottom: 4px;
     }
-    
+
     #addBtn {
         position: relative;
         visibility: visible;
@@ -1022,11 +1015,10 @@ input {
         height: 4px;
         top: calc(50% - 2px);
     }
-    
+
     /*update button*/
-    
     .update_hide {
-         visibility: hidden;   
+        visibility: hidden;
     }
 
     #conceptText {
@@ -1037,23 +1029,23 @@ input {
     #map {
         width: 50%;
     }
-    
+
     #profileTitle {
-    margin-bottom: 90px;
-    width: 100%;
-    }   
-    
+        margin-bottom: 90px;
+        width: 100%;
+    }
+
     .profileRow {
         text-align: left;
     }
-    
+
     .submit_payment_btn {
         text-align: left;
     }
-    
+
     #postDetail {
-    margin-bottom: 100px;
-}
+        margin-bottom: 100px;
+    }
 
 
 }
@@ -1084,5 +1076,3 @@ input {
         width: 70%;
     }
 }
-
-

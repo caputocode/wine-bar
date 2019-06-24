@@ -1,37 +1,35 @@
 {% extends "base.html" %} {% load static from staticfiles %} {% block content %}
 <div class="container">
+    <!--Page title-->
     <div class="row margin_row">
         <div class="col-xs-12 main_title">
             <h1 class="page_title">my orders</h1>
         </div>
-        <!-- USERS ORDER LINE ITEMS -->
+        
+        <!-- USERS PREVIOUS ORDERS -->
+        
         <div class="container">
             <div class="row">
                 <div class="col-xs-10 offset-xs-1 col-md-8 offset-md-2">
-                    
                     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Wine</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Order id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-     {% for orders in user_order_details %}
-           
-                <td>{{ orders.product }}</td>
-                <td>{{ orders.quantity }}</td>
-                <td>{{ order_id }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-                    
-                    
-                    
-                    
+                        <thead>
+                            <tr>
+                                <th scope="col">Wine</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Order id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for orders in user_order_details %}
+
+                                <td>{{ orders.product }}</td>
+                                <td>{{ orders.quantity }}</td>
+                                <td>{{ order_id }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="row">

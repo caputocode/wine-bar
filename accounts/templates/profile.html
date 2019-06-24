@@ -1,100 +1,103 @@
-{% extends "base.html" %} {% load static from staticfiles %} {% block content %}
+{% extends "base.html" %} 
+{% load static from staticfiles %} 
+{% block content %}
 
 <div class="container">
+    
+    <!--Page title-->
+    
     <div class="row margin_row">
         <div class="col-xs-12 main_title">
             <h1 class="page_title">profile</h1>
         </div>
     </div>
-    <div class="container">
-        <div id="profile" class="row">
-
-            <div class="col-xs-12 col-sm-9 col-md-6">
-                <h2 class="profile-title">Welcome {{user | title }}</h2>
-                <span class="email_profile"><p><em>You are logged in as {{ user.email }}</em></p></span>
-            </div>
+    <div id="profile" class="row">
+        <div class="col-xs-12 col-sm-9 col-md-6">
+            <h2 class="profile-title">Welcome {{user | title }}</h2>
+            <span class="email_profile"><p><em>You are logged in as {{ user.email }}</em></p></span>
         </div>
-
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-order-tab" data-toggle="tab" href="#nav-orders" role="tab" aria-controls="nav-orders" aria-selected="true">My Orders</a>
-                <a class="nav-item nav-link" id="nav-blogposts-tab" data-toggle="tab" href="#nav-blogposts" role="tab" aria-controls="nav-blogposts" aria-selected="false">My Blogposts</a>
+    </div>
+    
+    <!--Profile Tabs - Orders / Blogs created by user-->
+    
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-order-tab" data-toggle="tab" href="#nav-orders" role="tab" aria-controls="nav-orders" aria-selected="true">My Orders</a>
+            <a class="nav-item nav-link" id="nav-blogposts-tab" data-toggle="tab" href="#nav-blogposts" role="tab" aria-controls="nav-blogposts" aria-selected="false">My Blogposts</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        
+        <!--  ORDERS -->
+        
+        <div class="tab-pane fade show active" id="nav-orders" role="tabpanel" aria-labelledby="nav-order-tab">
+            <!--If user has ordered, show here-->
+            {% if user_orders %}
+            <div id="orders" class="row profileRow">
+                {% for orders in user_orders %}
+                <div class="orders col-xs-12 col-sm-4 center">
+                    <div class="order_dated">
+                        <h4 class="my_orders">Order dated:</h4>
+                        <p>{{ orders.date }}</p>
+                        <i class="far fa-calendar-alt fa-3x"></i>
+                    </div>
+                    <!-- Retrieve Previous Order details -->
+                    <a href="{% url 'retrieve_order' orders.id %}"><button type="button" class="btn btn-sm btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
+                      Details
+                    </button></a>
+                </div>
+                {% endfor %}
             </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-orders" role="tabpanel" aria-labelledby="nav-order-tab">
-                {% if user_orders %}
-                <div id="orders" class="row profileRow">
-                    <!--  ORDERS -->
-                    {% for orders in user_orders %}
-                    <div class="orders col-xs-12 col-sm-4 center">
-                        <div class="order_dated">
-                            <h4 class="my_orders">Order dated:</h4>
-                            <p>{{ orders.date }}</p>
-                            <i class="far fa-calendar-alt fa-3x"></i>
+
+            {% else %}
+            <!--If user has not ordered-->
+            <div class="row profileRow">
+                <div class="col-xs-10 offset-xs-1 col-sm-6">
+                    <p class="card-text">You haven't placed any orders yet {{ user | title }}</p>
+                    <a href="{% url 'wines' %}" class="btn btn-sm btn-outline-warning">Browse Wines</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <!--BLOGPOSTS-->
+        
+        <div class="tab-pane fade" id="nav-blogposts" role="tabpanel" aria-labelledby="nav-blogposts-tab">
+            <!--If user has created blog post, show here-->
+            {% if user_posts %}
+            <div class="row profileRow">
+                {% for post in user_posts %}
+                <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
+                    <div id="posts">
+                        <div class="post_body">
+                            <a href="{% url 'post_detail' post.id %}"><img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img></a>
+                            <p><a href="{% url 'post_detail' post.id %}" class="btn btn-outline-warning btn-sm read_more_btn">Read more</a></p>
                         </div>
-
-                        <!--bootstrap modal-->
-                        <!-- Button trigger modal -->
-                        <a href="{% url 'retrieve_order' orders.id %}"><button type="button" class="btn btn-sm btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
-                          Details
-                        </button></a>
-
-                        
-                    </div>
-                    {% endfor %}
-                </div>
-
-                {% else %}
-
-
-                <div class="row profileRow">
-                    <div class="col-xs-10 offset-xs-1 col-sm-6">
-                        <p class="card-text">You haven't placed any orders yet {{ user | title }}</p>
-                        <a href="{% url 'wines' %}" class="btn btn-sm btn-outline-warning">Browse Wines</a>
-                    </div>
-                </div>
-                {% endif %}
-            </div>
-
-            <div class="tab-pane fade" id="nav-blogposts" role="tabpanel" aria-labelledby="nav-blogposts-tab">
-
-                {% if user_posts %}
-                <div class="row profileRow">
-
-                    {% for post in user_posts %}
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
-                        <div id="posts">
-                            <div class="post_body">
-                                <a href="{% url 'post_detail' post.id %}"><img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img></a>
-                                <p><a href="{% url 'post_detail' post.id %}" class="btn btn-outline-warning btn-sm read_more_btn">Read more</a></p>
-                            </div>
-                            <div class="blog_title">
-                                <h4 id="blogpostTitle" class="card-title">{{ post.title }}</h4>
-                            </div>
+                        <div class="blog_title">
+                            <h4 id="blogpostTitle" class="card-title">{{ post.title }}</h4>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 create_another_post">
-                        <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Another Post</a>
-                    </div>
-                </div>
-
-                {% else %}
-
-                <div class="row profileRow">
-                    <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-6 center">
-                        <p class="">{{ user | title }} you have not submiitted any blog posts yet.</p>
-                        <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Post</a>
-                    </div>
-                </div>
-
-                {% endif %}
+                {% endfor %}
             </div>
-        </div>
+            <div class="row">
+                <div class="col-xs-12 create_another_post">
+                    <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Another Post</a>
+                </div>
+            </div>
 
+            {% else %}
+            <!--If user has not posted blog-->
+            <div class="row profileRow">
+                <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-6 center">
+                    <p class="">{{ user | title }} you have not submiitted any blog posts yet.</p>
+                    <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Post</a>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
     </div>
 </div>
+
 {% endblock %}
