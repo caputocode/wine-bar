@@ -8,18 +8,19 @@ $(function() {
 });
 
 // enables modal pop up on click of search icon in navbar 
-
-var modal = document.getElementById('boxModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-span.onclick = function() {
-  modal.style.display = "none";
-};
-window.onclick = function(event) {
-  if (event.target == modal) {
+$(function() {
+  var modal = document.getElementById('boxModal');
+  var btn = document.getElementById("myBtn");
+  var span = document.getElementsByClassName("close")[0];
+  btn.onclick = function() {
+    modal.style.display = "block";
+  };
+  span.onclick = function() {
     modal.style.display = "none";
-  }
-};
+  };
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+});
