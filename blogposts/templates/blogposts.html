@@ -1,36 +1,37 @@
 {% extends 'base.html' %} 
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
+{% load static from staticfiles %} 
+{% load bootstrap_tags %} 
+{% block content %}
 
-{% block content %} 
-
-
-    <article class="container">
-        <div class="row margin_row">
-            <div id="blogTitle" class="col-xs-12">
-                <div class="blog_btn">
-                    <h1 class="page_title">Blog all about it</h1>
-                    <p>Something to say on the world of wine? If you fancy contributing to our wine blog hit that button below.</p>
-                    <a class="btn btn-warning btn-sm create-btn" href="{% url 'new_post' %}" role="button">Create Post</a>
+<article class="container">
+    <!--Page title and subheading-->
+    <div class="row margin_row">
+        <div id="blogTitle" class="col-xs-12">
+            <div class="blog_btn">
+                <h1 class="page_title">Blog all about it</h1>
+                <p>Something to say on the world of wine? If you fancy contributing to our wine blog hit that button below.</p>
+                <a class="btn btn-warning btn-sm create-btn" href="{% url 'new_post' %}" role="button">Create Post</a>
+            </div>
+        </div>
+    </div>
+    
+    <!--BLOG POSTS-->
+    
+    <div class="row margin_bottom">
+        {% for post in posts %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
+            <div id="posts">
+                <div class="post_body">
+                    <a href="{% url 'post_detail' post.id %}"><img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img></a>
+                    <p><a href="{% url 'post_detail' post.id %}" class="btn btn-warning btn-sm read_more_btn">Read more</a></p>
+                </div>
+                <div class="blog_title">
+                    <h4 id="blogpostTitle" class="card-title">{{ post.title }}</h4>
                 </div>
             </div>
         </div>
-        <div class="row margin_bottom">
-            {% for post in posts %}
-            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-12 col-md-6 col-lg-4 col-md-offset-0">
-                    <div id="posts">
-                        <div class="post_body">
-                            <a href="{% url 'post_detail' post.id %}"><img class="img-fluid blog_imgs" src="{{ MEDIA_URL }}{{ post.image }}"></img></a>
-                            <p><a href="{% url 'post_detail' post.id %}"  class="btn btn-warning btn-sm read_more_btn">Read more</a></p>
-                        </div>
-                        <div class="blog_title">
-                            <h4 id="blogpostTitle" class="card-title">{{ post.title }}</h4>
-                        </div>
-                    </div>
-            </div>
-            {% endfor %}
-        </div>
-    </article>
-
+        {% endfor %}
+    </div>
+</article>
 
 {% endblock %}
