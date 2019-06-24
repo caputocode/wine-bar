@@ -1,4 +1,9 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block head_js %}
+{% extends 'base.html' %} 
+{% load static from staticfiles %} 
+{% load bootstrap_tags %} 
+
+{% block head_js %}
+<!--Stripe key-->
 <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
 <script type="text/javascript">
     //<![CDATA[
@@ -6,15 +11,21 @@
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock head_js %} {% block content %}
+{% endblock head_js %} 
+
+{% block content %}
 
 <div class="container">
     <div id="checkoutFormRow" class="row margin_row">
+        
+        <!--ORDER SUMMARY-->
+        
         <div class="col-xs-12 col-md-4">
+            <!--Title-->
             <div class="blog_btn page_title">
                 <h2 class="title">Order Summary</h2>
             </div>
-
+            <!--Show items in basket for checkout-->
             {% for item in cart_items %}
             <div class="row">
                 <div class="col-6">
@@ -35,10 +46,11 @@
             </div>
         </div>
 
+        <!--CHECKOUT FORM-->
+        
         <div class="col-xs-12 col-md-8">
             <div class="row">
                 <div id="checkoutForm" class="col-xs-12 col-md-8 offset-md-2">
-
                     <form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
                         <legend><i class="far fa-credit-card"></i> Payment Details</legend>
                         <div id="credit-card-errors" style="display:none">
@@ -61,4 +73,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
