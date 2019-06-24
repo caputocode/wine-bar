@@ -7,6 +7,7 @@ class Wine(models.Model):
     """
     
     name = models.CharField(max_length=254, default='')
+    description = models.CharField(max_length=300, default='')
     alcohol = models.CharField(max_length=254, blank=False, default='')
     grape = models.CharField(max_length=254, blank=False, default='')
     colour = models.CharField(max_length=25, blank=False, default='')

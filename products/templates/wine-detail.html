@@ -9,8 +9,9 @@
                     <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img>
                     {% endif %}
                     <h3 class="card-title">{{ wine.name }}</h3>
-                    <p class="box-description">{{ wine.grape }}</p>
+                    <p>{{ wine.grape }}</p>
                     <span class="winedetail_price"><p>£ {{ wine.price }}</p></span>
+                    <p>{{ wine.description }}</p>
                     <a href="{% url 'wines' %}" class="btn btn-outline-warning btn-sm">Back to wines</a>
                     <hr>
                     <form method="POST" action="{% url 'add_to_cart' wine.id %}">
