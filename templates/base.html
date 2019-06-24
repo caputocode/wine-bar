@@ -3,21 +3,25 @@
 <html lang="en">
 
 <head>
-    <!-- meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="wine bar and ecommerce site selling wine">
+    <meta name="author" content="Heather Caputo">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wine Bar</title>
 
-    <!-- Bootstrap CSS jQuery -->
+    <!--Google Fonts / Font Awesome-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
+    <!-- Bootstrap CSS jQuery -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!--Custom CSS / JS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/custom.js' %}"></script>
     <script src="{% static 'js/map.js' %}"></script>
 
@@ -26,15 +30,15 @@
 
 <body>
     <header class="container-fluid">
+        
         <!--  Navbar    -->
     
         <nav id="nav" class="navbar navbar-expand-lg navbar-light fixed-top">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                                <a class="navbar-brand" href="{% url 'index' %}"><img class="img-fluid logo_nav" src="/media/images/logo.png" alt="logo"></a>
-
+                <a class="navbar-brand" href="{% url 'index' %}"><img class="img-fluid logo_nav" src="/media/images/logo.png" alt="logo"></a>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active one">
                         <a class="nav-link" href="{% url 'concept' %}">About<span class="sr-only">(current)</span></a>
@@ -55,7 +59,6 @@
                         <a class="nav-link" href="{% url 'menu' %}">Menu <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
-
                 <span id="myBtn"><i class="fas fa-search"></i></span>
     
                 {% if user.is_authenticated %}
@@ -83,28 +86,30 @@
             </div>
         </nav>
     </header>
-    <!--Messages-->
-
-{% if messages %}
-<div class="message-wrapper alert alert-warning alert-dismissible fade show" role="alert">
-  {% for message in messages %}
-  <p id="message-text">{{ message }}</p>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-  {% endfor %}
-</div>
-{% endif %}
-
-    <!--Insert Content-->
     
-    {% block content %} 
-    {% endblock %}
-
+    <!--Messages-->
+    <section>
+        {% if messages %}
+        <div class="message-wrapper alert alert-warning alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+            <p id="message-text">{{ message }}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>    
+    
+    <!--Insert Content-->
+    <main>
+        {% block content %} 
+        {% endblock %}
+    </main>
+    
     <!-- Search Modal -->
     
     <div id="boxModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -115,7 +120,6 @@
                 </form>
             </div>
         </div>
-        
     </div>
 
     <!--Footer-->
@@ -168,7 +172,6 @@
             }
         };
     </script>
-    
 </body>
 
 </html>

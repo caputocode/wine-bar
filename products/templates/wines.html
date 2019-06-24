@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+{% load staticfiles %} 
+{% block content %}
+
+<div class="container">
+    <!--Page title and subheadings-->
+    <div class="row margin_row">
+        <div class="col">
+            <div class="buy_wine margin_bottom">
+                <h1 class="page_title">The Wine Collection</h1>
+                <p>Want a bottle or two to enjoy at home? You can buy from Mistral Bar directly and online right here.</p>
+                <p>Browse our authentic wine selection below.</p>
+            </div>
+        </div>
+    </div>
+    <!--Wine Products-->
+    <div id="winesRow" class="row margin_bottom">
+        {% for wine in wines %}
+        <div class="col-xs-12 col-md-6 col-lg-4">
+            <div class="card wines">
+                <div class="card-body">
+                    <a href="{% url 'wine_detail' wine.id %}" role="button">
+                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ wine.image }}"></img>
+                    </a>
+                    <h3 class="card-title">{{ wine.name|truncatechars:24 }}</h3>
+                    <p class="box-description">{{ wine.grape |truncatechars:20}}</p>
+                    <p><strong>£ {{ wine.price }}</strong></p>
+                    {% if user.is_authenticated %}
+                    <form method="POST" action="{% url 'add_to_cart' wine.id %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                            <span class="input-group-btn">
+                                <button id="addBtn" class="icon-btn add-btn">
+                                    <div class="add-icon"></div>
+                                    <div class="btn-txt">Add to Basket</div>
+                                </button>
+                                <button class="mobile_add_btn"><i class="fas fa-plus"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    {% else %}
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input class="form-control quantity-input" type="number" min='1' max='999' name="quantity" placeholder="Quantity" required />
+                            <span class="input-group-btn">
+                                <button id="addBtn" class="icon-btn add-btn">
+                                    <div class="add-icon"></div>
+                                    <div class="btn-txt">Add to Basket</div>
+                                </button>
+                                <button class="mobile_add_btn"><i class="fas fa-plus"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
