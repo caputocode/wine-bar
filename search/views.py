@@ -9,6 +9,6 @@ from django.core.paginator import EmptyPage
 def do_search(request):
     
     wines = Wine.objects.filter(Q(name__icontains=request.GET['q']) | Q(grape__icontains=request.GET['q']) | Q(colour__icontains=request.GET['q']))
-    return render(request, 'wines.html', {'wines': wines})
+    return render(request, 'products.html', {'wines': wines})
     
     

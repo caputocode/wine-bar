@@ -7,7 +7,7 @@ def display_wines(request):
     View to show all wines available
     """
     wines = Wine.objects.all().order_by('price')
-    return render(request, 'wines.html', {'wines': wines})
+    return render(request, 'products.html', {'wines': wines})
  
 def wine_detail(request, pk):
     """
