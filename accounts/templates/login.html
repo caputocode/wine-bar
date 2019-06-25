@@ -1,28 +1,25 @@
-{% extends "base.html" %} 
-{% load bootstrap_tags %} 
-{% block content %}
+{% extends "base.html" %} {% load bootstrap_tags %} {% block content %}
 
-<div class="login_wrapper">
-    <div class="container">
-        <!--Page title-->
-        <div class="row margin_row">
-            <div class="col-xs-12 main_title">
-                <h1 class="page_title">Login</h1>
-            </div>
+<div class="container">
+    <!--Page title-->
+    <div class="row margin_row">
+        <div class="col-xs-12 main_title">
+            <h1 class="page_title">Login</h1>
         </div>
-        <!--Login Form-->
-        <div id="login" class="row justify-content-center">
-            <div class="col-xs-12 col-sm-6 col-lg-4 login_form">
-                <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
-                    <fieldset class="form-group">
-                        {% csrf_token %} {{ user_form | as_bootstrap }}
-                        <button type="submit" class="btn btn-warning">Login</button>
-                        <a class="btn btn-light" href="{% url 'password_reset' %}" role="button">Forgot my password</a>
-                    </fieldset>
-                </form>
-            </div>
+    </div>
+    <!--Login Form-->
+    <div id="login" class="row justify-content-center">
+        <div class="col-xs-12 col-sm-6 col-lg-4 login_form">
+            <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
+                <fieldset class="form-group">
+                    {% csrf_token %} {{ user_form | as_bootstrap }}
+                    <button type="submit" class="btn btn-warning">Login</button>
+                    <a class="btn btn-light" href="{% url 'password_reset' %}" role="button">Forgot my password</a>
+                </fieldset>
+            </form>
         </div>
-    </div> 
+    </div>
 </div>
+
 
 {% endblock %}
