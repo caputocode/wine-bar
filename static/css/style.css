@@ -792,11 +792,9 @@ input {
 /* .............................................................MEDIA QUERIES */
 
 @media (min-width: 481px) {
-
-    /*Add to Basket Button*/
-    .mobile_add_btn {
+    /*update button*/
+    .update_hide {
         visibility: hidden;
-        position: absolute;
     }
 }
 
@@ -881,6 +879,11 @@ input {
         font-size: 18px;
     }
 
+    /*Add to Basket Button*/
+    .mobile_add_btn {
+        visibility: hidden;
+        position: absolute;
+    }
 
     .cart_icon i {
         visibility: hidden;
@@ -983,11 +986,6 @@ input {
         right: 15px;
         height: 4px;
         top: calc(50% - 2px);
-    }
-
-    /*update button*/
-    .update_hide {
-        visibility: hidden;
     }
 
     #conceptText {
