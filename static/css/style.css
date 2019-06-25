@@ -247,7 +247,6 @@ p.help-block {
 
 /*...................................................................SHOP WINES PAGE */
 
-
 .wines {
     margin-bottom: 20px;
 }
@@ -792,6 +791,15 @@ input {
 
 /* .............................................................MEDIA QUERIES */
 
+@media (min-width: 481px) {
+
+    /*Add to Basket Button*/
+    .mobile_add_btn {
+        visibility: hidden;
+        position: absolute;
+    }
+}
+
 @media (min-width: 767px) {
 
 
@@ -873,11 +881,6 @@ input {
         font-size: 18px;
     }
 
-    /*Add to Basket Button*/
-    .mobile_add_btn {
-        visibility: hidden;
-        position: absolute;
-    }
 
     .cart_icon i {
         visibility: hidden;
