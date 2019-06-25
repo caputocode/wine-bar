@@ -5,9 +5,9 @@ def index(request):
     """A view that displays the index page"""
     return render(request, "index.html")
    
-def concept(request):
+def about(request):
     """A view that displays the concept page"""
-    return render(request, "concept.html")
+    return render(request, "about.html")
     
 def events(request):
     """A view that displays the concept page"""

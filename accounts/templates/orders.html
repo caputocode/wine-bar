@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% load static from staticfiles %} {% block content %}
+{% extends "base.html" %} 
+{% load static from staticfiles %} 
+{% block content %}
+
 <div class="container">
     <!--Page title-->
     <div class="row margin_row">
@@ -21,21 +24,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                {% for orders in user_order_details %}
-
+                            {% for orders in user_order_details %}
                                 <td>{{ orders.product }}</td>
                                 <td>{{ orders.quantity }}</td>
                                 <td>{{ order_id }}</td>
-                                <p>{{ orders.total }}</p>
-                            </tr>
                             {% endfor %}
+                            </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-            
-            <div class="col-12 checkout_total">
-                <p>Total: <i class="fas fa-pound-sign"></i> {{ total }}</p>
             </div>
             <div class="row">
                 <div class="col-xs-12 create_another_post">
