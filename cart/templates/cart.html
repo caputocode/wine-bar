@@ -5,6 +5,7 @@
             <h1 class="page_title">basket</h1>
         </div>
     </div>
+    <!--if user has items in basket-->
     {% if cart_items %}
     <div class="row margin_bottom">
         {% for item in cart_items %}
@@ -13,7 +14,6 @@
                 <div class="card-body">
                     <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
                     <h3>{{ item.product.name|truncatechars:28 }}</h3>
-                    <p class="box-description">{{ item.product.description }}</p>
                     <p>£ {{ item.product.price }}</p>
                     <div class="caption">
                         <p>
