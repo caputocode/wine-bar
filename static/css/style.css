@@ -732,7 +732,7 @@ footer {
     transition: .5s;
 }
 
-.socials li a:hover {
+.socials li a i:hover {
     color: #B87333;
     -webkit-transition: .5s;
     -o-transition: .5s;
