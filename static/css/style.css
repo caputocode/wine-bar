@@ -720,7 +720,7 @@ footer {
     margin-top: 26px;
 }
 
-.socials a {
+.socials i {
     list-style: none;
     display: inline-block;
     padding: 12px 15px;
@@ -732,7 +732,7 @@ footer {
     transition: .5s;
 }
 
-.socials a:hover {
+.socials i:hover {
     color: #B87333;
     -webkit-transition: .5s;
     -o-transition: .5s;
