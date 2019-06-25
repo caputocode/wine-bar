@@ -1,23 +1,19 @@
 {% extends 'base.html' %} {% load staticfiles %} {% load bootstrap_tags %} {% block content %}
 <div class="container">
-    <!--Page title-->
     <div class="row margin_row">
                 <div class="col-xs-12 main_title">
             <h1 class="page_title">basket</h1>
         </div>
     </div>
-    
-    <!--If user has items in cart, show here-->
     {% if cart_items %}
     <div class="row margin_bottom">
         {% for item in cart_items %}
         <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card wines">
                 <div class="card-body">
-                    <a href="{% url 'wine_detail' wine.id %}" role="button">
-                        <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
-                    </a>
+                    <img class="boxes card-img-top" src="{{ MEDIA_URL }}{{ item.product.image }}"></img>
                     <h3>{{ item.product.name|truncatechars:28 }}</h3>
+                    <p class="box-description">{{ item.product.description }}</p>
                     <p>£ {{ item.product.price }}</p>
                     <div class="caption">
                         <p>
@@ -58,10 +54,10 @@
         </div>
     </div>
 </div>
-    {% else %}
+{% else %}
 
-    <!-- If cart is EMPTY -->
-    <div class="row margin_bottom">
+<!-- If cart is EMPTY -->
+<div class="row margin_bottom">
         <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4 empty-cart">
             <div class="card wines">
                 <div class="card-body no_items">
@@ -72,6 +68,4 @@
         </div>
     </div>
 </div>
-
-{% endif %} 
-{% endblock %}
+{% endif %} {% endblock %}
