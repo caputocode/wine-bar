@@ -105,13 +105,13 @@ a:hover {
     color: #fff;
     background-color: #000;
     -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 #indexRow {
     position: relative;
-    top: 40%;
+    top: 34%;
 }
 
 .index_buttons {
@@ -125,7 +125,7 @@ a:hover {
     width: 300px;
     margin: 0 auto;
     position: relative;
-    top: 38%;
+    top: 31%;
 }
 
 /*...................................................................NAV */
@@ -287,6 +287,7 @@ p.help-block {
     width: 50px;
     height: 50px;
     border: 1px solid #B87333;
+    background: #fff;
     border-radius: 25px;
     margin: 0 10px;
     overflow: hidden;
@@ -480,8 +481,8 @@ p.help-block {
 
 #posts .blog_imgs:hover {
     -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-            transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 .create-btn {
@@ -515,7 +516,7 @@ p.help-block {
     width: 100%;
     height: 300px;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     -webkit-transition: all 1.6s;
     -o-transition: all 1.6s;
     transition: all 1.6s;
@@ -731,15 +732,15 @@ footer {
     transition: .5s;
 }
 
-.socials li:hover {
+.socials li a:hover {
     color: #B87333;
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
     cursor: pointer;
     -webkit-transform: scale(2.1);
-        -ms-transform: scale(2.1);
-            transform: scale(2.1);
+    -ms-transform: scale(2.1);
+    transform: scale(2.1);
 }
 
 .footer_explore {
@@ -823,8 +824,8 @@ footer {
 
 #myBtn:hover {
     -webkit-transform: scale(2.1);
-        -ms-transform: scale(2.1);
-            transform: scale(2.1);
+    -ms-transform: scale(2.1);
+    transform: scale(2.1);
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
