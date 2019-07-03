@@ -3,17 +3,38 @@
 
 # Mistral Wine Bar and Shop
 
+The Mistral wine bar and shop web application has been designed for people seeking information about a new real world wine bar which opened in Chester, UK last year. The site provides information about the bar, the story behind it and the opportunity to buy wine online.
+
 ## UX
 
-The Mistral wine bar and shop web application has been designed for people seeking information about a new real world wine bar which opened in Chester, UK last year. The site provides information about the bar, the story behind it and the opportunity to buy wine online.
-As a user interested in wine, or new to Chester I want to be able to know what the bar is about. This provides relevant information about the atmosphere or ‘vibe’ of the bar itself. Straight away the user is presented with a landing page which informs them that Mistral Wine bar has in fact a ‘bar’, and a ‘wine shop’.
-If the user clicks on the ‘bar’ they are directed to the ‘about us’ section. This page delivers a concise section on what Mistral wine bar is, and why the user should visit/buy wine.
-Once at this part of the site, the user then has the opportunity to browse the site using a nav bar. As a user I want this to be clear and obvious what sections are available. The navbar provides users with links to the following pages;
+As a user interested in wine, or new to Chester I would want to know what the bar entails. This provides relevant information about the atmosphere or ‘vibe’ of the bar itself. The web app contains an initial landing page which is presented to the user straight away. This informs them that Mistral Wine bar has in fact a ‘bar’, and a ‘wine shop’.
+If the user clicks on the ‘bar’ they are directed to the ‘about us’ section. This page delivers a concise section on what Mistral wine bar is, and why the user should visit/buy wine. Once at this part of the site, the user then has the opportunity to browse the site using the nav bar. As a user I want this to be clear and obvious what sections are available. The navbar provides users with links to the following pages;
+
 Events: as a user I would want to know if the bar provides any exclusive use, live music or wine tastings. This information is provided here in a visually appealing way. The image used in the background on this page has been carefully chosen, aiming to entice the user by creating a ‘celebratory’ feel using fizz. This fits in well with the basis of the page, which has the main title of ‘special occasion?’.
+
 Shop wine: as a user I would like to be able to buy wine from the website. I would like to see this presented in a clear way which shows the image of the bottle, information regarding the grape and alcohol content, along with price.
 Search function: the site provides a clear search symbol in the nav bar. The placeholder informs the user of recommended search cues to aid with a successful search result. The site has been built to search for wine by grape, colour/type (ie red, white, rose, sparkling) and name of wine.
 
+Menu: as a user I would want to be given an example of what is served at the bar. This page contains a visually appealing display of wines on offer by the glass, and the 'nibbles' that Mistral provides, with reference to the fact that the menu changes frequently. This menu is highlighted to encourage users to visit this page based on the theory if a user can view a menu they are more likely to try the bar/shop. 
+
+Blog page: as a user I would like an interactive component to the web app, by being able to submit blogposts this gives a 'community' feel to the website. This can be controlled by the superuser and be deleted if inappropriate etc. I would also want to be able to edit my posts.  
+
+If, as a user i was logged in, I would want to be able to:
+* view my profile and look at any previous purchases
+* view any blogposts I had created, along with an opportunity to create more with ease
+* add items (wine) to my basket
+* view my basket
+* proceed easily to checkout, with a summary of my order and a total sum to pay 
+* checkout easily with notifaction that my payment has been successful
+
+If, as a user I was not logged in, I would want to be able to:
+* navigate to a login/registration form quickly
+* browse wines
+* access informative parts of the website such as 'contact us/about/events etc' pages
+
+
 ## Features
+
 ### Existing Features
 
 Currently the website contains the following features:
@@ -25,7 +46,7 @@ Currently the website contains the following features:
 * Wine collection page displaying all wine
 * Search function in the navbar - able to search wine by grape, colour (ie red, white, rose, sparklng) and name of wine
 * Events Page - informing users they are able to hire space / attend wine events, with active links to the Contact us page
-* Contact Page - providing info on location, using google maps, hours of opening, and 
+* Contact Page - providing info on location, using google maps, hours of opening, and a contact form  
 
 ### Features left to implement
 
@@ -33,15 +54,29 @@ Currently the website contains the following features:
 * The addition of more wines
 * More detail on the Profile Orders page, at the moment the table only contains wine purchased, and the quantity along with the date. A total would be beneficial, as well as a feature to re-order collection.
 * A subscription model would improve the business model overall, creating a way for users to purchase monthly/quarterly etc boxes of wine
+* implement EmailJS to create communication between the company and the user.
 
+## Technologies used
 
+Technology | Use in Project
+---------------------------
+HTML5 | Used throughout web app as base for front end development
+CSS3 | Styling front end of project
+Javascript/JQuery | Used for giving the project .. and for use of google map 
+Django | Framework built on python using standard forms, models and views. Used for authentication purposes in addition. 
+Stripe | Used to process payments
 
 ## Testing
 
 The web app was tested continuously during development. This was done predominantly through django's own error template notifactions. Any errors that occurred in my code were revealed when typing 'run' in the console, and opening the link to the site on cloud9.
 I used chrome developer tools constantly to ensure the look and feel of the website worked, and was responsive, testing the site on all devices.
+Friends and family were asked to test site to ensure the user experience was positive. Good feedback was received and logins and registrations/blogposts were successful. This did reveal an issue with users adding to basket when they were not logged in, sending the user to login page (with use of @login_required) however upon login an error was thrown. I did not solve the issue directly but created a work-around by addding template language in 
+Error messages display when user actions fail such as registration/login/payment/forms.
 
-## Testing User functionality
+Travis CI was used for ...:
+by synchronising Travis account with GitHub account and connecting github repository. Push to github to ensure travis CI status is build:passing
+
+### Testing User functionality
 The following accounts have been created to use as an existing test:
 username: heather
 password: heather1@£
@@ -52,7 +87,9 @@ password: david1@£
 username: polly
 password: polly
 
-## Testing Stripe
+User functionality testing was consistently tested throughout developement. Users were created and logins/logouts checked with a variety of users, whilst also checking blogposts/orders were user specific. All links/buttons were checked and python code was tested manually by ensuring site functioned as intended.
+
+### Testing Stripe
 The ecommerce section of this site has been set up using <a href="https://stripe.com/gb">Stripe</a>. To test the payment works, follow the steps below:
 
 1. Once items are in basket, proceed to checkout
@@ -67,6 +104,13 @@ nb. I had some issues implementing Stripe initially, and had to reorder my jquer
 
 ### Remaining Issues
 I created a dynamic ‘add to basket / update basket’ button (inspiration from codepen). This works well on larger screens but did need some adjusting for smaller screens due to size. I addressed this issue by hiding the visibility of the button and creating a new simpler ‘update / plus’ button for mobile screens. This works fine on all devices in chrome dev, however in real world both seem to be visible on the android safari. I have not found a way round this yet due to time constraints, however this will need addressing in the near future.
+
+## Deployment
+
+The project is hosted by Heroku and can be found <a href="">here</a>.
+
+
+
 
 ## Credits
 
