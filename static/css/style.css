@@ -861,7 +861,7 @@ input {
     .menu_item {
         height: 140px;
     }
-    
+
     .event_wrapper .events_subtitle {
         margin: 20px 0;
     }
@@ -929,34 +929,41 @@ input {
         top: calc(50% - 2px);
         background: #B87333;
     }
+
     .add-btn::after {
         right: 14px;
         overflow: hidden;
         border-top-right-radius: 2px;
         border-bottom-right-radius: 2px;
     }
+
     .add-btn::before {
         left: 14px;
         border-top-left-radius: 2px;
         border-bottom-left-radius: 2px;
     }
+
     .icon-btn:focus {
         outline: none;
     }
+
     .btn-txt {
         opacity: 0;
         -webkit-transition: opacity 0.2s;
         -o-transition: opacity 0.2s;
         transition: opacity 0.2s;
     }
+
     .add-btn:hover::before,
     .add-btn:hover::after {
         width: 4px;
         border-radius: 2px;
     }
+
     .add-btn:hover .btn-txt {
         opacity: 1;
     }
+
     .add-icon::after,
     .add-icon::before {
         -webkit-transition: all 0.2s ease-in-out;
@@ -1016,8 +1023,6 @@ input {
     #postDetail {
         margin-bottom: 100px;
     }
-
-
 }
 
 @media (min-width: 992px) {
