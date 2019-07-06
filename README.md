@@ -25,7 +25,7 @@ I would also want to be able to edit my posts, and see the posts I had created i
 If, as a user i was logged in, I would want to be able to:
 * have access to all pages of the web app
 * view my profile and look at any previous purchases
-* view any blogposts I had created, along with an opportunity to create more with ease
+* view any blogposts I had created, edit and create more with ease
 * add items (wine) to my basket
 * view my basket
 * proceed easily to checkout, with a summary of my order and a total sum to pay 
