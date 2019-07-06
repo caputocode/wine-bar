@@ -18,7 +18,7 @@
                     <p><span class="lighttext">Published on: {{ post.published_date }}</span></p>
                     <p><span class="lighttext">Views: {{post.views}}</span></p>
                     <a href="{% url 'get_posts' %}" class="btn btn-sm btn-outline-warning">Back to Blog</a>
-                    <a href="{% url 'edit_post' post.id %}" class="btn btn-sm btn-outline-danger">Edit Post</a>
+                    <a href="{% url 'edit_post' post.id %}" style="display: none;" class="btn btn-sm btn-outline-danger">Edit Post</a>
                     <hr>
                 </div>
             </div>
