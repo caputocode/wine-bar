@@ -210,3 +210,5 @@ Acknowledgements
 
 * I received inspiration for this project from the original site, linked above
 * CodePen was used for some design inspiration such as the add to basket buttons
+* Last but certianly not least, I would like to thank my tutor Maranatha for his ever so helpful tips and advice on this project. Also to the good people of Code Institute 
+  for helping with many issues, particularly regarding AWS migration and finally Slack for providing such a useful forum to troubleshoot.
