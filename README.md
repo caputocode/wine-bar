@@ -7,17 +7,20 @@ The Mistral wine bar and shop web application, which has been built using the Dj
 
 ## UX
 
-As a user interested in wine, or new to Chester I would want to know what the bar entails. This provides relevant information about the atmosphere or ‘vibe’ of the bar itself. The web app contains an initial landing page which is presented to the user straight away. This informs them that Mistral Wine bar has in fact a ‘bar’, and a ‘wine shop’.
+As a user interested in wine, or new to the city of Chester, I would want to know the story behind the bar, and what is on offer. The web app contains an initial landing page which is presented to the user straight away. This informs them that Mistral Wine bar has in fact a ‘bar’, and a ‘wine shop’.
 If the user clicks on the ‘bar’ they are directed to the ‘about us’ section. This page delivers a concise section on what Mistral wine bar is, and why the user should visit/buy wine. Once at this part of the site, the user then has the opportunity to browse the site using the nav bar. As a user I want this to be clear and obvious what sections are available. The navbar provides users with links to the following pages;
 
-Events: as a user I would want to know if the bar provides any exclusive use, live music or wine tastings. This information is provided here in a visually appealing way. The image used in the background on this page has been carefully chosen, aiming to entice the user by creating a ‘celebratory’ feel using fizz. This fits in well with the basis of the page, which has the main title of ‘special occasion?’.
+Events: as a user I would want to know if the bar provides any exclusive use, live music or wine tastings. This information is provided here in a visually appealing way. The image used in the background on this page has been carefully chosen, aiming to entice the user by creating a ‘celebratory’ feel using fizz. 
+This fits in well with the theme of the page, which has the main title of ‘special occasion?’.
 
 Shop wine: as a user I would like to be able to buy wine from the website. I would like to see this presented in a clear way which shows the image of the bottle, information regarding the grape and alcohol content, along with price.
+
 Search function: the site provides a clear search symbol in the nav bar. The placeholder informs the user of recommended search cues to aid with a successful search result. The site has been built to search for wine by grape, colour/type (ie red, white, rose, sparkling) and name of wine.
 
 Menu: as a user I would want to be given an example of what is served at the bar. This page contains a visually appealing display of wines on offer by the glass, and the 'nibbles' that Mistral provides, with reference to the fact that the menu changes frequently. This menu is highlighted to encourage users to visit this page based on the theory if a user can view a menu they are more likely to try the bar/shop. 
 
-Blog page: as a user I would like an interactive component to the web app, by being able to submit blogposts this gives a 'community' feel to the website. This can be controlled by the superuser and be deleted if inappropriate etc. I would also want to be able to edit my posts.  
+Blog page: as a user I would like an interactive component to the web app. Being able to submit blogposts gives a 'community' feel to the website. This can be controlled by the superuser and be deleted if inappropriate etc. 
+I would also want to be able to edit my posts, and see the posts I had created in one place. These can be located on the Profile page once user is logged in (see below).  
 
 If, as a user i was logged in, I would want to be able to:
 * have access to all pages of the web app
@@ -34,6 +37,8 @@ If, as a user I was not logged in, I would want to be able to:
 * browse wines
 * access informative parts of the website such as 'contact us/about/events etc' pages
 
+The design process of this site was inspired by the Mistral ethos and logo. The look is clean and sleek and this is a style I tried to continue throughout the design process. 
+Wireframes can be found in the folder 'wireframes'. 
 
 ## Features
 
@@ -83,15 +88,12 @@ Heroku | deployment/hosting project
 ## Testing
 
 The web app was tested continuously during development. This was done predominantly through django's own error template notifactions. Any errors that occurred in my code were revealed when typing 'run' in the console, and opening the link to the site on cloud9.
-I used chrome developer tools constantly to ensure the look and feel of the website worked, and was responsive, testing the site on all devices.
-Friends and family were asked to test site to ensure the user experience was positive. Good feedback was received and logins and registrations/blogposts were successful. This did reveal an issue with users adding to basket when they were not logged in, sending the user to login page (with use of @login_required) however upon login an error was thrown. I did not solve the issue directly but created a work-around by addding template language in 
-Error messages display when user actions fail such as registration/login/payment/forms.
 
-This project was manually tested continuosly throughout the project. This took place in chrome developer tools and the site has been 
-tested on several screen sizes to ensure the site is responsive on different devices. 
-In the real world this has been tested on a mac laptop and several mobile phones and ipads. 
+I used chrome developer tools constantly to ensure the look and feel of the website worked, and was responsive, testing the site on all devices. In the real world this has been tested on a mac laptop and several mobile phones and ipads. 
 The site has also been tested in different browsers.
-The console in chrome devs has 1 error regarding google map JS
+Friends and family were asked to test site to ensure the user experience was positive. Good feedback was received and logins and registrations/blogposts were successful. This did reveal an issue with users adding to basket when they were not logged in, sending the user to login page (with use of @login_required) however upon login an error was thrown. 
+I did not solve the issue directly but created a work-around by addding template language in the HTML of products.html using  an ```{% if user.is_authenticated %}``` statement: If user is logged in 'add_to_cart', if 
+user is not logged in direct to 'login' page. 
 
 All links have been checked thoroughly ensuring they provide the correct navigation around the site. 
 Wine Collection page: click on 'add' icon. Prompt occurs if no quantity entered. Once number of bottles required hit 'add' icon and 
@@ -100,17 +102,13 @@ basket should increase by number added. User is redirected to Basket page.
 Login and Registration have been tested numerous times with success and no issues have been found with password reset. 
 To test these, navigate to Login / Register and create a new account. Alert message to occur if successful or failed.
 
-In order for a user to add to basket they must be logged in. There were some issues once number of wines had been added to 
-basket, redirect to login page appeared successfully but login submission threw an error. I was unable to determine why, 
-however I managed to get around this by entering template language in the products.html. If user is logged in 'add_to_cart', if 
-user is not logged in direct to 'login' page. 
-
 CSS was tested using the W3C CSS Validation service with no resulting errors.
 Javascript was tested using JShint resulting in no errors. 
+There is one error in the console regarding google maps, the map works with no issues and this is something which will be looked at in the future.
 
 Testing my number of views function for blogposts was checked by ensuring the number incremented each time the page was refreshed/visited.
 
-Django error pages were used to determine problems with my code. These were helpful in determining where I had gone wrong.
+Error messages successfully display when user actions fail such as registration/login/payment/forms.
 
 My github repository was connected to Travis CI, and a successful build tag is present to show all tests passed Travis' tests. 
 
@@ -185,6 +183,12 @@ else:
 
 (Static files were added to AWS S3 bucket)
 
+Build failed numerous times for a variety of reasons. These included problems with the requirements.txt folder after migrating project to AWS, this was solved
+ by updating / comparing to previous folder on c9. 
+Other issues included not commenting out import env, which was necessary to run ```python3 manage.py collectstatic``` when updates to static files were made. This was solved by creating 
+the following code:
+```if os.path.exists('env.py'):
+    import env```
 
 ## Credits
 
