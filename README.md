@@ -3,7 +3,7 @@
 
 # Mistral Wine Bar and Shop
 
-The Mistral wine bar and shop web application has been designed for people seeking information about a new real world wine bar which opened in Chester, UK last year. The site provides information about the bar, the story behind it and the opportunity to buy wine online.
+The Mistral wine bar and shop web application, which has been built using the Django framework, has been designed for people seeking information about a new real world wine bar which opened in Chester, UK last year. The site provides information about the bar, the story behind it and the opportunity to buy wine online.
 
 ## UX
 
@@ -20,12 +20,14 @@ Menu: as a user I would want to be given an example of what is served at the bar
 Blog page: as a user I would like an interactive component to the web app, by being able to submit blogposts this gives a 'community' feel to the website. This can be controlled by the superuser and be deleted if inappropriate etc. I would also want to be able to edit my posts.  
 
 If, as a user i was logged in, I would want to be able to:
+* have access to all pages of the web app
 * view my profile and look at any previous purchases
 * view any blogposts I had created, along with an opportunity to create more with ease
 * add items (wine) to my basket
 * view my basket
 * proceed easily to checkout, with a summary of my order and a total sum to pay 
 * checkout easily with notifaction that my payment has been successful
+* contact the business with any questions/feedback
 
 If, as a user I was not logged in, I would want to be able to:
 * navigate to a login/registration form quickly
@@ -39,14 +41,20 @@ If, as a user I was not logged in, I would want to be able to:
 
 Currently the website contains the following features:
 
-* User login / Registration using Django's authentication feature. Password reset also available.
-* User Profile Page containing Purchase history, and blogposts created by that specific user.
-* Landing Page with option to view description about the Bar, or enter straight to the Wine Collection page (shop).
+* User login / Registration / logout using Django's authentication feature. Password reset also available
+* User Profile Page containing Purchase history, and blogposts created by that specific user
+* Landing Page with option to view description about the Bar, or enter straight to the Wine Collection page (shop)
 * About us page
 * Wine collection page displaying all wine
+* Wine detail page giving full name and description of wine including grape, alcohol content, price and relevant information
 * Search function in the navbar - able to search wine by grape, colour (ie red, white, rose, sparklng) and name of wine
+* Basket - users can view basket viewing contents available
+* Checkout - consists of order summary and form to complete for payment (use of STRIPE set up)
 * Events Page - informing users they are able to hire space / attend wine events, with active links to the Contact us page
 * Contact Page - providing info on location, using google maps, hours of opening, and a contact form  
+* Menu page - list of wines and nibbles available at the bar 
+* Blog page - users can view blogs, edit and create posts
+
 
 ### Features left to implement
 
@@ -55,6 +63,7 @@ Currently the website contains the following features:
 * More detail on the Profile Orders page, at the moment the table only contains wine purchased, and the quantity along with the date. A total would be beneficial, as well as a feature to re-order collection.
 * A subscription model would improve the business model overall, creating a way for users to purchase monthly/quarterly etc boxes of wine
 * implement EmailJS to create communication between the company and the user.
+* I would also like to add a function for users to be able to comment on blogposts
 
 ## Technologies used
 
