@@ -201,7 +201,7 @@ if os.path.exists('env.py'):
 * Download project from GitHub
 * Create a local virtual environment and install the packages required, these can be found in requirements.txt
 * Create a superuser account
-* Run makemigrations and 
+* Run makemigrations and migrate
 * Create an env.py file at root of your site
 * Create a local env var as above
 * Run on 127.0.0.1/8000
