@@ -858,7 +858,10 @@ input {
         background-color: rgba(251, 251, 251, .8);
     }
 
-
+    .menu_item {
+        height: 140px;
+    }
+    
     .event_wrapper .events_subtitle {
         margin: 20px 0;
     }
@@ -1023,23 +1026,9 @@ input {
         margin-top: 200px;
 
     }
-    .event_wrapper {
-        width: 70%;
-        padding: 50px;
-    }
-
 
     #contactForm {
         width: 70%;
 
-    }
-
-
-}
-
-@media (min-width: 1070px) {
-
-    .menu_wrapper {
-        width: 70%;
     }
 }

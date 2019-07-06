@@ -8,10 +8,12 @@ $(function() {
 });
 
 // enables modal pop up on click of search icon in navbar 
+
 $(function() {
   var modal = document.getElementById('boxModal');
   var btn = document.getElementById("myBtn");
   var span = document.getElementsByClassName("close")[0];
+  
   btn.onclick = function() {
     modal.style.display = "block";
   };

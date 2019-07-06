@@ -59,12 +59,17 @@ Currently the website contains the following features:
 ## Technologies used
 
 Technology | Use in Project
----------------------------
-HTML5 | Used throughout web app as base for front end development
-CSS3 | Styling front end of project
-Javascript/JQuery | Used for giving the project .. and for use of google map 
-Django | Framework built on python using standard forms, models and views. Used for authentication purposes in addition. 
+--- | ---
+HTML5 | Used throughout web app to build the foundations
+CSS3 | Styling front end of project 
+Javascript/JQuery | DOM manipulation, google map implementation and activating Bootstrap elements
+Bootstrap | Opensource framework for developing the front end of the site
+Font Awesome | Provides icons throughout the site including socials and login/register etc
+Django | Framework built on python using standard forms, models and views and used for authentication purposes 
 Stripe | Used to process payments
+Amazon Web Services S3 | hosting purposes.
+Git | version control.
+Heroku | deployment/hosting project
 
 ## Testing
 
@@ -73,8 +78,33 @@ I used chrome developer tools constantly to ensure the look and feel of the webs
 Friends and family were asked to test site to ensure the user experience was positive. Good feedback was received and logins and registrations/blogposts were successful. This did reveal an issue with users adding to basket when they were not logged in, sending the user to login page (with use of @login_required) however upon login an error was thrown. I did not solve the issue directly but created a work-around by addding template language in 
 Error messages display when user actions fail such as registration/login/payment/forms.
 
-Travis CI was used for ...:
-by synchronising Travis account with GitHub account and connecting github repository. Push to github to ensure travis CI status is build:passing
+This project was manually tested continuosly throughout the project. This took place in chrome developer tools and the site has been 
+tested on several screen sizes to ensure the site is responsive on different devices. 
+In the real world this has been tested on a mac laptop and several mobile phones and ipads. 
+The site has also been tested in different browsers.
+The console in chrome devs has 1 error regarding google map JS
+
+All links have been checked thoroughly ensuring they provide the correct navigation around the site. 
+Wine Collection page: click on 'add' icon. Prompt occurs if no quantity entered. Once number of bottles required hit 'add' icon and 
+basket should increase by number added. User is redirected to Basket page. 
+
+Login and Registration have been tested numerous times with success and no issues have been found with password reset. 
+To test these, navigate to Login / Register and create a new account. Alert message to occur if successful or failed.
+
+In order for a user to add to basket they must be logged in. There were some issues once number of wines had been added to 
+basket, redirect to login page appeared successfully but login submission threw an error. I was unable to determine why, 
+however I managed to get around this by entering template language in the products.html. If user is logged in 'add_to_cart', if 
+user is not logged in direct to 'login' page. 
+
+CSS was tested using the W3C CSS Validation service with no resulting errors.
+Javascript was tested using JShint resulting in no errors. 
+
+Testing my number of views function for blogposts was checked by ensuring the number incremented each time the page was refreshed/visited.
+
+Django error pages were used to determine problems with my code. These were helpful in determining where I had gone wrong.
+
+My github repository was connected to Travis CI, and a successful build tag is present to show all tests passed Travis' tests. 
+
 
 ### Testing User functionality
 The following accounts have been created to use as an existing test:
@@ -103,19 +133,27 @@ The ecommerce section of this site has been set up using <a href="https://stripe
 nb. I had some issues implementing Stripe initially, and had to reorder my jquery in order for this to work
 
 ### Remaining Issues
-I created a dynamic ‘add to basket / update basket’ button (inspiration from codepen). This works well on larger screens but did need some adjusting for smaller screens due to size. I addressed this issue by hiding the visibility of the button and creating a new simpler ‘update / plus’ button for mobile screens. This works fine on all devices in chrome dev, however in real world both seem to be visible on the android safari. I have not found a way round this yet due to time constraints, however this will need addressing in the near future.
+I created a dynamic ‘add to basket / update basket’ button (inspiration from codepen). This works well on larger screens but did need some adjusting for smaller screens due to size. 
+I addressed this issue by hiding the visibility of the button and creating a new simpler ‘update / plus’ button for mobile screens. This works fine on all devices in chrome dev, 
+however in real world both seem to be visible on the android safari. I have not found a way round this yet due to time constraints, however this will need addressing in the near future.
 
 ## Deployment
 
-The project is hosted by Heroku and can be found <a href="">here</a>.
+### Deployment to Heroku
 
+This project has been deployed to Heroku and can be found <a href="https://mistral-wine-bar.herokuapp.com/">here</a>.
 
+Ensure requirements.txt and Procfile have been created to allow heroku to install correct packages and run project successfully.
+Create a postgres DB on Heroku
+Add env vars; SECRET_KEY, STRIPE_PUBLISHABLE, STRIPE_SECRET, DISABLE_COLLECTSTATIC
+
+Static files were added to AWS bucket
 
 
 ## Credits
 
 Content
-•	The text used in the blogs has in parts been taken from the real blog of <a href="https://www.paulcaputo.co.uk/">Paul Caputo, with permission</a>.
+•	The text used in the blogs has in parts been taken from the real blog of <a href="https://www.paulcaputo.co.uk/">Paul Caputo</a>, with permission.
 •	The main content of the website has been taken from the original <a href="https://www.mistralwine.co.uk/">Mistral wine bar website</a>.
 
 Media
