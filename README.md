@@ -187,8 +187,10 @@ Build failed numerous times for a variety of reasons. These included problems wi
  by updating / comparing to previous folder on c9. 
 Other issues included not commenting out import env, which was necessary to run ```python3 manage.py collectstatic``` when updates to static files were made. This was solved by creating 
 the following code:
+
 ```if os.path.exists('env.py'):
-    import env```
+    import env
+```
 
 ## Credits
 

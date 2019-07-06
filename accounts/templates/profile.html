@@ -48,7 +48,6 @@
                 </div>
                 {% endfor %}
             </div>
-
             {% else %}
             <!--If user has not ordered-->
             <div class="row profileRow">
@@ -85,7 +84,6 @@
                     <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Another Post</a>
                 </div>
             </div>
-
             {% else %}
             <!--If user has not posted blog-->
             <div class="row profileRow">
@@ -94,7 +92,6 @@
                     <a href="{% url 'new_post' %}" class="btn btn-sm btn-outline-danger">Create Post</a>
                 </div>
             </div>
-
             {% endif %}
         </div>
     </div>
