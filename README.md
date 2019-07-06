@@ -143,21 +143,51 @@ however in real world both seem to be visible on the android safari. I have not 
 
 This project has been deployed to Heroku and can be found <a href="https://mistral-wine-bar.herokuapp.com/">here</a>.
 
-Ensure requirements.txt and Procfile have been created to allow heroku to install correct packages and run project successfully.
-Create a postgres DB on Heroku
-Add env vars; SECRET_KEY, STRIPE_PUBLISHABLE, STRIPE_SECRET, DISABLE_COLLECTSTATIC
+* Ensure the following are installed:
+```pip3 install dj-database-url```
+```pip3 install psycopg2```
+```pip3 install django-storages```
+```pip3 install boto3```
+```pip3 install gunicorn```
+```pip3 freeze > requirements.txt```
 
-Static files were added to AWS bucket
+* In settings.py: add heroku app to allowed hosts
+* In env.py file add postgres url as env var; os.environ.setdefault("DATABASE_URL", "postgres...)
+* In settings.py: Database config;
+```
+if "DATABASE_URL" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+else:
+    print("Database URL not found. Using SQLite instead")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+* Sync the Heroku app with GitHub repo
+* Ensure requirements.txt and Procfile have been created to allow heroku to install correct packages and run project successfully
+* Create a postgres DB on Heroku
+* Add AWS / env vars from env.py file; 
+* add DISABLE_COLLECTSTATIC set to 1
+
+* Use ```git push origin master``` to push to github and heroku
+
+(Static files were added to AWS S3 bucket)
 
 
 ## Credits
 
 Content
-•	The text used in the blogs has in parts been taken from the real blog of <a href="https://www.paulcaputo.co.uk/">Paul Caputo</a>, with permission.
-•	The main content of the website has been taken from the original <a href="https://www.mistralwine.co.uk/">Mistral wine bar website</a>.
+* The text used in the blogs has in parts been taken from the real blog of <a href="https://www.paulcaputo.co.uk/">Paul Caputo</a>, with permission.
+* The main content of the website has been taken from the original <a href="https://www.mistralwine.co.uk/">Mistral wine bar website</a>.
+* <a href="https://snazzymaps.com">Snazzy Maps</a> was used for the colour scheme of the google map on the contact page
 
 Media
-•	The photos used in this site were obtained from <a href="https://www.pexels.com/">pexels</a>.
+* The photos used in this site were obtained from <a href="https://www.pexels.com/">pexels</a>.
+
 Acknowledgements
 
-•	I received inspiration for this project from the original site, linked above.
+* I received inspiration for this project from the original site, linked above
+* CodePen was used for some design inspiration such as the add to basket buttons
