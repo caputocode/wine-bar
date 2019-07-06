@@ -116,13 +116,16 @@ My github repository was connected to Travis CI, and a successful build tag is p
 ### Testing User functionality
 The following accounts have been created to use as an existing test:
 username: heather
-password: heather1@£
+password: heather
 
 username: david
-password: david1@£
+password: david
 
 username: polly
 password: polly
+
+username: josie
+password: josie
 
 User functionality testing was consistently tested throughout developement. Users were created and logins/logouts checked with a variety of users, whilst also checking blogposts/orders were user specific. All links/buttons were checked and python code was tested manually by ensuring site functioned as intended.
 
@@ -188,7 +191,8 @@ Build failed numerous times for a variety of reasons. These included problems wi
 Other issues included not commenting out import env, which was necessary to run ```python3 manage.py collectstatic``` when updates to static files were made. This was solved by creating 
 the following code:
 
-```if os.path.exists('env.py'):
+```
+if os.path.exists('env.py'):
     import env
 ```
 
